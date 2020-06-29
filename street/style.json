@@ -286,7 +286,7 @@
         "assets": {
             "attribution": "©NARWASSCO,Ltd.",
             "minzoom": 10,
-            "maxzoom": 18,
+            "maxzoom": 16,
             "tiles": [
                 "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.mvt"
             ],
