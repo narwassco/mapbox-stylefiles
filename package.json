@@ -1,0 +1,25 @@
+{
+  "name": "mapbox-stylefiles",
+  "version": "1.0.0",
+  "description": "This repository manages Mapbox Stylefile and Sprite files for the applicaiton.",
+  "main": "src/sprite-create.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "sprite": "node src/sprite-create.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narwassco/mapbox-stylefiles.git"
+  },
+  "author": "Jin IGARASHI",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/narwassco/mapbox-stylefiles/issues"
+  },
+  "homepage": "https://github.com/narwassco/mapbox-stylefiles#readme",
+  "dependencies": {
+    "@watergis/sprite-creator": "^0.1.0"
+  }
+}

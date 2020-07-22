@@ -24,7 +24,7 @@
             "type": "vector"
         }
     },
-    "sprite": "https://narwassco.github.io/sprite-create/sprite/sprite",
+    "sprite": "https://narwassco.github.io/mapbox-stylefiles/unvt/sprite",
     "glyphs": "https://optgeo.github.io/kokoromi-ke/font/{fontstack}/{range}.pbf",
     "layers": [
         {
