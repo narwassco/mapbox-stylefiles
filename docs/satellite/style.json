@@ -250,7 +250,7 @@
             "type": "vector"
         }
     },
-    "sprite": "https://narwassco.github.io/mapbox-stylefiles/satellite/sprite",
+    "sprite": "https://narwassco.github.io/mapbox-stylefiles/satellite/sprite/sprite",
     "glyphs": "mapbox://fonts/narwassco/{fontstack}/{range}.pbf",
     "layers": [
         {
