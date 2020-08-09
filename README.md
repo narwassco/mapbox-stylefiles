@@ -8,8 +8,10 @@ These sprite files were created by Mapbox Studio. However, some layers of style 
 ## About Sprite files
 ### Download ICONs
 
-Download the following repositories at the same directory of `mapbox-stylefiles` module.
+Download the following repositories under the directory of `icons`.
 ```
+mkdir icons
+cd icons
 git clone https://github.com/mapbox/maki.git
 git clone https://github.com/narwassco/water-icons.git
 git clone https://github.com/narwassco/mapbox-street-icons.git
