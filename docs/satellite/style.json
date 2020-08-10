@@ -245,7 +245,7 @@
             "minzoom": 10,
             "maxzoom": 16,
             "tiles": [
-                "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.mvt"
+                "https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt"
             ],
             "type": "vector"
         }
