@@ -6386,7 +6386,7 @@
             "type": "fill",
             "source": "assets",
             "source-layer": "waterworks",
-            "minzoom": 8,
+            "minzoom": 10,
             "layout": {},
             "paint": {"fill-color": "hsla(52, 88%, 74%, 0.5)"}
         },
@@ -6503,7 +6503,7 @@
             "type": "symbol",
             "source": "assets",
             "source-layer": "point_annotation",
-            "minzoom": 8,
+            "minzoom": 12,
             "maxzoom": 15,
             "filter": ["match", ["get", "layer"], ["waterworks"], true, false],
             "layout": {
