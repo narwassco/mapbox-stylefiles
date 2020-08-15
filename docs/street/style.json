@@ -290,7 +290,7 @@
         }
     },
     "sprite": "https://nakuruwater.github.io/mapbox-stylefiles/satellite/sprite/sprite",
-    "glyphs": "mapbox://fonts/jin-igarashi/{fontstack}/{range}.pbf",
+    "glyphs": "mapbox://fonts/geff/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "land",
