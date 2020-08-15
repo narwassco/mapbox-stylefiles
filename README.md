@@ -26,9 +26,6 @@ npm i
 npm run sprite
 ```
 
-### Automate to deploy sprite files
-I added Github Actions to automate creating and deploying spritefiles when you create the new release tag. Please check out Github Action configuration file.
-
 ### Configuration
 Please configure your icons and output direcoties settings in [config.js](./test/config.js).
 
