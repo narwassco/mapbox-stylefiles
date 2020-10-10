@@ -24,7 +24,7 @@
             "type": "vector"
         }
     },
-    "sprite": "https://nakuruwater.github.io/mapbox-stylefiles/satellite/sprite/sprite",
+    "sprite": "https://nakuruwater.github.io/mapbox-stylefiles/unvt/sprite/sprite",
     "glyphs": "https://optgeo.github.io/kokoromi-ke/font/{fontstack}/{range}.pbf",
     "layers": [
         {
@@ -6985,6 +6985,15 @@
           "paint": {"fill-color": "hsla(52, 88%, 74%, 0.5)"}
       },
       {
+        "id": "sewer_twrks",
+        "type": "fill",
+        "source": "assets",
+        "source-layer": "sewer_twrks",
+        "minzoom": 10,
+        "layout": {},
+        "paint": {"fill-color": "hsla(52, 88%, 74%, 0.5)"}
+      },
+      {
           "id": "pipeline",
           "type": "line",
           "source": "assets",
@@ -6992,6 +7001,18 @@
           "minzoom": 8,
           "layout": {},
           "paint": {"line-color": "hsl(240, 100%, 50%)"}
+      },
+      {
+        "id": "sewer_line",
+        "type": "line",
+        "source": "assets",
+        "source-layer": "sewer_line",
+        "minzoom": 8,
+        "layout": {},
+        "paint": {
+            "line-color": "rgba(39, 138, 39, 1)",
+            "line-width": 2
+        }
       },
       {
           "id": "plots-annotation",
@@ -7080,6 +7101,30 @@
           }
       },
       {
+        "id": "sewer_line_annotation",
+        "type": "symbol",
+        "source": "assets",
+        "source-layer": "sewer_line",
+        "minzoom": 14,
+        "layout": {
+            "text-field": [
+                "concat",
+                ["to-string", ["get", "diameter"]],
+                " ",
+                ["get", "material"],
+                " ",
+                ["to-string", ["get", "year_construction"]]
+            ],
+            "text-size": 12,
+            "symbol-placement": "line",
+            "text-font": ["sans"]
+        },
+        "paint": {
+            "text-halo-color": "hsl(0, 0%, 100%)",
+            "text-halo-width": 1
+        }
+      },
+      {
           "id": "zone-annotation",
           "type": "symbol",
           "source": "assets",
@@ -7102,7 +7147,7 @@
           "type": "symbol",
           "source": "assets",
           "source-layer": "point_annotation",
-          "minzoom": 13,
+          "minzoom": 12,
           "maxzoom": 15,
           "filter": ["match", ["get", "layer"], ["waterworks"], true, false],
           "layout": {
@@ -7115,6 +7160,25 @@
               "text-font": ["sans"]
           },
           "paint": {}
+      },
+      {
+        "id": "sewer_twrks-annotation",
+        "type": "symbol",
+        "source": "assets",
+        "source-layer": "point_annotation",
+        "minzoom": 12,
+        "maxzoom": 15,
+        "filter": ["match", ["get", "layer"], ["sewer_twrks"], true, false],
+        "layout": {
+            "text-field": ["to-string", ["get", "name"]],
+            "text-size": 13,
+            "icon-image": "rectangle-yellow-6",
+            "icon-text-fit": "both",
+            "icon-size": 1.1,
+            "text-max-width": 8,
+            "text-font": ["sans"]
+        },
+        "paint": {}
       },
       {
           "id": "nawassco-blkmtr",

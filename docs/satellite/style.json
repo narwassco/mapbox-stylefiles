@@ -111,23 +111,7 @@
                         ["natural-features", "natural-labels"],
                         ["point-of-interest-labels", "poi-labels"],
                         ["transit", "transit-labels"],
-                        ["place-labels", "place-labels"],
-                        "zones",
-                        "plots",
-                        "waterworks",
-                        "pipeline",
-                        "plots-annotation",
-                        "reservoirs",
-                        "boreholes",
-                        "pump-stations",
-                        "man-holes",
-                        "pipeline_annotation",
-                        "zone-annotation",
-                        "waterworks-annotation",
-                        "nawassco-blkmtr",
-                        "public-toilet",
-                        "toilets",
-                        "accounts"
+                        ["place-labels", "place-labels"]
                     ]
                 }
             ],
@@ -4843,15 +4827,6 @@
             "paint": {"text-halo-color": "#ffffff", "text-halo-width": 1}
         },
         {
-            "id": "man-holes",
-            "type": "symbol",
-            "source": "assets",
-            "source-layer": "man_holes",
-            "minzoom": 14,
-            "layout": {"icon-image": "manhole", "icon-size": 0.8},
-            "paint": {}
-        },
-        {
             "id": "pipeline_annotation",
             "type": "symbol",
             "source": "assets",
@@ -4914,24 +4889,6 @@
             "source-layer": "nawassco_blkmtr",
             "minzoom": 13,
             "layout": {"icon-image": "meter"},
-            "paint": {}
-        },
-        {
-            "id": "public-toilet",
-            "type": "symbol",
-            "source": "assets",
-            "source-layer": "public_toilet",
-            "minzoom": 12,
-            "layout": {"icon-image": "public_toilet"},
-            "paint": {}
-        },
-        {
-            "id": "toilets",
-            "type": "symbol",
-            "source": "assets",
-            "source-layer": "toilets",
-            "minzoom": 15,
-            "layout": {"icon-image": "toilet"},
             "paint": {}
         },
         {
