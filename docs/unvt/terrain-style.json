@@ -33,10 +33,14 @@
           "maxzoom": 15
         }
     },
+    "terrain": {
+      "source": "narok-dem",
+      "exaggeration": 1.5
+    },
     "sprite": "https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite",
     "glyphs": "https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
     "layers": [
-          {
+        {
             "id": "background",
             "paint": {
               "background-color": [
@@ -47,6 +51,15 @@
               ]
             },
             "type": "background"
+          },
+          {
+            "id": "sky",
+            "type": "sky",
+            "paint": {
+            "sky-type": "atmosphere",
+            "sky-atmosphere-sun": [0.0, 0.0],
+            "sky-atmosphere-sun-intensity": 15
+            }
           },
           {
             "id": "hillshade",
