@@ -31,6 +31,13 @@
           "tileSize": 512,
           "minzoom": 5,
           "maxzoom": 15
+        },
+        "open-buildings": {
+          "attribution": "©<a href='https://geolonia.com'>Geolonia</a>, ©<a href='https://sites.research.google/open-buildings/'>Google</a>",
+          "minzoom": 15,
+          "maxzoom": 15,
+          "url": "https://tileserver.geolonia.com/test-20210805-open-buildings/tiles.json?key=YOUR-API-KEY",
+          "type": "vector"
         }
     },
     "sprite": "https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite",
@@ -6087,18 +6094,6 @@
           "type": "line"
         },
         {
-          "filter": [
-            "match",
-            [
-              "geometry-type"
-            ],
-            [
-              "LineString",
-              "MultiLineString"
-            ],
-            true,
-            false
-          ],
           "id": "ls-building",
           "paint": {
             "line-color": [
@@ -6108,8 +6103,8 @@
               174
             ]
           },
-          "source": "v",
-          "source-layer": "building",
+          "source": "open-buildings",
+          "source-layer": "open-buildings",
           "type": "line"
         },
         {
@@ -6165,45 +6160,6 @@
           "type": "line"
         },
         {
-          "filter": [
-            "match",
-            [
-              "geometry-type"
-            ],
-            [
-              "Polygon",
-              "MultiPolygon"
-            ],
-            [
-              "match",
-              [
-                "get",
-                "layer"
-              ],
-              [
-                "-1",
-                "-2",
-                "-3",
-                "-4",
-                "-5"
-              ],
-              false,
-              [
-                "match",
-                [
-                  "get",
-                  "building"
-                ],
-                [
-                  "train_station",
-                  "roof"
-                ],
-                false,
-                true
-              ]
-            ],
-            false
-          ],
           "id": "pg-building-shadow",
           "minzoom": 16,
           "paint": {
@@ -6218,35 +6174,11 @@
               2
             ]
           },
-          "source": "v",
-          "source-layer": "building",
+          "source": "open-buildings",
+          "source-layer": "open-buildings",
           "type": "fill"
         },
         {
-          "filter": [
-            "match",
-            [
-              "get",
-              "building"
-            ],
-            [
-              "train_station",
-              "roof"
-            ],
-            false,
-            [
-              "match",
-              [
-                "geometry-type"
-              ],
-              [
-                "Polygon",
-                "MultiPolygon"
-              ],
-              true,
-              false
-            ]
-          ],
           "id": "pg-building",
           "paint": {
             "fill-extrusion-color": [
@@ -6275,127 +6207,14 @@
                 215
               ]
             ],
-            "fill-extrusion-height": [
-              "max",
-              [
-                "to-number",
-                [
-                  "get",
-                  "height"
-                ]
-              ],
-              [
-                "*",
-                [
-                  "to-number",
-                  [
-                    "get",
-                    "building:levels"
-                  ]
-                ],
-                3.66
-              ],
-              5
-            ],
+            "fill-extrusion-height": 3.66,
             "fill-extrusion-opacity": 0.7
           },
-          "source": "v",
-          "source-layer": "building",
+          "source": "open-buildings",
+          "source-layer": "open-buildings",
           "type": "fill-extrusion"
         },
         {
-          "filter": [
-            "match",
-            [
-              "geometry-type"
-            ],
-            [
-              "Polygon",
-              "MultiPolygon"
-            ],
-            [
-              "match",
-              [
-                "get",
-                "building"
-              ],
-              [
-                "train_station",
-                "roof"
-              ],
-              true,
-              [
-                "match",
-                [
-                  "get",
-                  "public_transport"
-                ],
-                "station",
-                true,
-                false
-              ]
-            ],
-            false
-          ],
-          "id": "pg-building-train-station",
-          "paint": {
-            "fill-color": [
-              "match",
-              [
-                "get",
-                "layer"
-              ],
-              [
-                "-1",
-                "-2",
-                "-3",
-                "-4",
-                "-5"
-              ],
-              [
-                "rgb",
-                238,
-                238,
-                238
-              ],
-              [
-                "rgb",
-                222,
-                215,
-                215
-              ]
-            ],
-            "fill-opacity": [
-              "interpolate",
-              [
-                "linear"
-              ],
-              [
-                "zoom"
-              ],
-              16,
-              1,
-              17,
-              0.4
-            ]
-          },
-          "source": "v",
-          "source-layer": "building",
-          "type": "fill"
-        },
-        {
-          "filter": [
-            "match",
-            [
-              "geometry-type"
-            ],
-            [
-              "Polygon",
-              "MultiPolygon"
-            ],
-            true,
-            false
-          ],
           "id": "pg-building-outline",
           "minzoom": 14,
           "paint": {
@@ -6407,8 +6226,8 @@
             ],
             "line-width": 1
           },
-          "source": "v",
-          "source-layer": "building",
+          "source": "open-buildings",
+          "source-layer": "open-buildings",
           "type": "line"
         },
         {

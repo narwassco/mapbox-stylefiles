@@ -366,8 +366,7 @@
               240,
               244,
               195
-            ],
-            "fill-opacity": 0.4
+            ]
           },
           "source": "v",
           "source-layer": "landuse",
@@ -393,8 +392,7 @@
               200,
               233,
               188
-            ],
-            "fill-opacity": 0.4
+            ]
           },
           "source": "v",
           "source-layer": "nature",
@@ -6479,14 +6477,14 @@
                 "place"
               ],
               "airports",
-              "airport-11",
+              "airport",
               "ports",
-              "ferry-11",
+              "ferry_terminal",
               "mountains",
-              "mountain-11",
+              "refugee",
               "city",
-              "city-11",
-              "circle-11"
+              "national_capital",
+              "default"
             ],
             "icon-size": 1,
             "text-field": [
@@ -6548,8 +6546,8 @@
                 "natural"
               ],
               "tree",
-              "park-11",
-              "circle-11"
+              "park",
+              "default"
             ]
           },
           "minzoom": 18,
@@ -6633,8 +6631,8 @@
                 "highway"
               ],
               "bus_stop",
-              "bus-11",
-              "circle-11"
+              "bus_stop",
+              "default"
             ],
             "text-anchor": "top",
             "text-field": [
@@ -6700,12 +6698,12 @@
                 "railway"
               ],
               "station",
-              "rail-11",
+              "railway_station",
               "halt",
-              "rail-11",
+              "halt",
               "tram_stop",
-              "rail-11",
-              "circle-11"
+              "tram_stop",
+              "default"
             ],
             "text-anchor": "top",
             "text-field": [
@@ -6797,8 +6795,8 @@
                 "barrier"
               ],
               "gate",
-              "prison-11",
-              "circle-11"
+              "prison",
+              "default"
             ]
           },
           "minzoom": 17,
@@ -6919,7 +6917,7 @@
                 "capital"
               ],
               "yes",
-              "city-11",
+              "national_capital",
               [
                 "match",
                 [
@@ -6969,36 +6967,36 @@
                   "sports_centre",
                   "tennis"
                 ],
-                "fitness-centre-11",
+                "sport",
                 [
                   "public_building",
                   "townhall"
                 ],
-                "college-11",
+                "public_building",
                 [
                   "college",
                   "university"
                 ],
-                "college-11",
+                "college",
                 [
                   "restaurant",
                   "fast_food",
                   "cafe",
                   "food_court"
                 ],
-                "restaurant-11",
+                "restaurant",
                 [
                   "biergarten",
                   "nightclub",
                   "pub",
                   "bar"
                 ],
-                "bar-11",
+                "bar",
                 [
                   "community_centre",
                   "government"
                 ],
-                "building-11",
+                "other_public_building",
                 [
                   "library",
                   "arts_centre",
@@ -7006,31 +7004,31 @@
                   "ruins",
                   "museum"
                 ],
-                "building-11",
+                "public_building",
                 [
                   "money_transfer",
                   "bureau_de_change",
                   "bank",
                   "atm"
                 ],
-                "bank-11",
+                "bank",
                 [
                   "monument",
                   "memorial",
                   "grave_yard"
                 ],
-                "castle-11",
+                "memorial",
                 [
                   "castle",
                   "fort"
                 ],
-                "castle-11",
+                "castle",
                 [
                   "bed_and_breakfast",
                   "hotel",
                   "chalet"
                 ],
-                "lodging-11",
+                "hotel",
                 [
                   "car_repair",
                   "supermarket",
@@ -7056,48 +7054,48 @@
                   "car_rental",
                   "bakery"
                 ],
-                "commercial-11",
-                "drinking-water-11",
-                "water-11",
-                "bus-11",
-                "bus-11",
-                "park-11",
-                "park-11",
-                "stadium-11",
-                "stadium-11",
-                "embassy-11",
-                "embassy-11",
-                "hospital-11",
-                "hospital-11",
-                "fuel-11",
-                "fuel-11",
-                "airport-11",
-                "airport-11",
-                "ferry-11",
-                "ferry-11",
-                "zoo-11",
-                "zoo-11",
-                "amusement-park-11",
-                "amusement-park-11",
-                "airfield-11",
-                "airfield-11",
-                "building-11",
-                "building-11",
-                "pharmacy-11",
-                "pharmacy-11",
-                "townhall-11",
-                "townhall-11",
-                "police-11",
-                "police-11",
-                "prison-11",
-                "prison-11",
-                "fire-station-11",
-                "fire-station-11",
-                "post-11",
-                "post-11",
-                "school-11",
-                "school-11",
-                "circle-11"
+                "commercial",
+                "drinking_water",
+                "water_supply",
+                "bus_station",
+                "bus_station",
+                "park",
+                "park",
+                "stadium",
+                "stadium",
+                "embassy",
+                "embassy",
+                "hospital",
+                "hospital",
+                "fuel",
+                "fuel",
+                "airport",
+                "airport",
+                "ferry_terminal",
+                "ferry_terminal",
+                "zoo",
+                "zoo",
+                "theme_park",
+                "theme_park",
+                "airfield",
+                "airfield",
+                "ngo",
+                "ngo",
+                "pharmacy",
+                "pharmacy",
+                "courthouse",
+                "courthouse",
+                "police",
+                "police_station",
+                "prison",
+                "prison",
+                "fire_station",
+                "fire_station",
+                "post_office",
+                "post_office",
+                "school",
+                "school",
+                "default"
               ]
             ],
             "icon-size": [
@@ -7267,6 +7265,7 @@
               10
             ]
           },
+          "minzoom": 7,
           "paint": {
             "text-color": [
               "rgb",
