@@ -36,7 +36,7 @@
           "attribution": "©<a href='https://geolonia.com'>Geolonia</a>, ©<a href='https://sites.research.google/open-buildings/'>Google</a>",
           "minzoom": 15,
           "maxzoom": 15,
-          "url": "https://tileserver.geolonia.com/test-20210805-open-buildings/tiles.json?key=YOUR-API-KEY",
+          "url": "https://tileserver.geolonia.com/test-20210805-open-buildings/tiles.json?key=7ff003ba76954448a750371edcbb8b2d",
           "type": "vector"
         }
     },
