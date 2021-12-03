@@ -14,6 +14,14 @@
             ],
             "type": "vector"
         },
+        "ne": {
+          "attribution": "©Natural Earth., <img src='https://unopengis.github.io/watermark/watermark.png'>",
+          "maxzoom": 5,
+          "tiles": [
+            "https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf"
+          ],
+          "type": "vector"
+        },
         "assets": {
             "attribution": "©NARWASSCO,Ltd., ©Mapbox",
             "minzoom": 10,
@@ -93,7 +101,7 @@
               240
             ]
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "ocean",
           "type": "fill"
         },
@@ -120,7 +128,7 @@
             ],
             "line-width": 2
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "coastline",
           "type": "line"
         },
@@ -270,7 +278,7 @@
               0
             ]
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "land",
           "type": "fill"
         },
@@ -310,7 +318,7 @@
               0
             ]
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "snow",
           "type": "fill"
         },
@@ -626,7 +634,7 @@
             ],
             "line-width": 1
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "country",
           "type": "line"
         },
@@ -6259,7 +6267,7 @@
             ],
             "text-halo-width": 1
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "country_annotation",
           "type": "symbol"
         },
@@ -6328,7 +6336,7 @@
             ],
             "text-halo-width": 1
           },
-          "source": "v",
+          "source": "ne",
           "source-layer": "place",
           "type": "symbol"
         },
