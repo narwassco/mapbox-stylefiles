@@ -1,6 +1,6 @@
 {
   "name": "mapbox-stylefiles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This repository manages Mapbox Stylefile and Sprite files for the applicaiton.",
   "main": "src/sprite-create.js",
   "directories": {
