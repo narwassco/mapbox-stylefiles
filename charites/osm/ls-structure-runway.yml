@@ -1,0 +1,33 @@
+filter:
+  - match
+  - - get
+    - aeroway
+  - runway
+  - - match
+    - - geometry-type
+    - - LineString
+      - MultiLineString
+    - true
+    - false
+  - false
+id: ls-structure-runway
+layout:
+  line-cap: square
+paint:
+  line-color:
+    - rgb
+    - 128
+    - 102
+    - 125
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 12
+    - 5
+    - 22
+    - 1440
+source: v
+source-layer: structure
+type: line

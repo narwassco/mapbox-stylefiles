@@ -1,0 +1,33 @@
+filter:
+  - match
+  - - get
+    - highway
+  - motorway
+  - - case
+    - - has
+      - layer
+    - false
+    - true
+  - false
+id: ls-road-line-a
+layout:
+  line-cap: round
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 204
+    - 122
+    - 155
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 360
+source: v
+source-layer: road
+type: line

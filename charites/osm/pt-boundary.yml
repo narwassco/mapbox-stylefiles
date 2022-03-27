@@ -1,0 +1,18 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-boundary
+paint:
+  circle-color:
+    - rgb
+    - 183
+    - 28
+    - 28
+  circle-radius: 2.5
+source: v
+source-layer: boundary
+type: circle

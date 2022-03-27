@@ -1,0 +1,9 @@
+id: parcels
+type: line
+source: assets
+source-layer: parcels
+minzoom: 16
+layout: {}
+paint:
+  line-width: 1.2
+  line-color: hsl(0, 0%, 0%)

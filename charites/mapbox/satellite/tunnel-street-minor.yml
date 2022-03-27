@@ -1,0 +1,82 @@
+id: tunnel-street-minor
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, tunnels
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - tunnel
+  - - step
+    - - zoom
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+      - true
+      - false
+    - 14
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+        - secondary_link
+        - tertiary_link
+      - true
+      - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout: {}
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 12
+    - 0.5
+    - 14
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+      - 2
+      - track
+      - 1
+      - 0.5
+    - 18
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+      - 18
+      - 12
+  line-color:
+    - match
+    - - get
+      - class
+    - street_limited
+    - hsl(0, 2%, 22%)
+    - hsla(0, 0%, 90%, 0.5)
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - 1
+    - 15
+    - 0

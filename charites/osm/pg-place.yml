@@ -1,0 +1,18 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-place
+paint:
+  fill-color:
+    - rgba
+    - 197
+    - 202
+    - 233
+    - 0.2
+source: v
+source-layer: place
+type: fill

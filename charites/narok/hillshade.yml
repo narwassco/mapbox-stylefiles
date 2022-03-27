@@ -1,0 +1,13 @@
+id: hillshade
+type: hillshade
+source: narok-dem
+minzoom: 6
+maxzoom: 14
+layout: {}
+paint:
+  hillshade-accent-color: '#5a5a5a'
+  hillshade-exaggeration: 0.5
+  hillshade-highlight-color: '#FFFFFF'
+  hillshade-illumination-anchor: viewport
+  hillshade-illumination-direction: 335
+  hillshade-shadow-color: '#5a5a5a'

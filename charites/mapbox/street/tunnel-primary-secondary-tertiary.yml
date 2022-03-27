@@ -1,0 +1,47 @@
+id: tunnel-primary-secondary-tertiary
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, tunnels
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - tunnel
+  - - match
+    - - get
+      - class
+    - - primary
+      - secondary
+      - tertiary
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout: {}
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 5
+    - - match
+      - - get
+        - class
+      - primary
+      - 0.75
+      - 0.1
+    - 18
+    - - match
+      - - get
+        - class
+      - primary
+      - 32
+      - 26
+  line-color: hsl(0, 0%, 100%)

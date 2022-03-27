@@ -1,0 +1,46 @@
+id: road-pedestrian-polygon-fill
+type: fill
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., surface
+source: composite
+source-layer: road
+minzoom: 12
+filter:
+  - all
+  - - '=='
+    - - geometry-type
+    - Polygon
+  - - match
+    - - get
+      - class
+    - - path
+      - pedestrian
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - case
+    - - has
+      - layer
+    - - '>='
+      - - get
+        - layer
+      - 0
+    - true
+layout: {}
+paint:
+  fill-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 16
+    - hsl(230, 16%, 94%)
+    - 16.25
+    - hsl(230, 52%, 98%)
+  fill-outline-color: hsl(230, 26%, 88%)

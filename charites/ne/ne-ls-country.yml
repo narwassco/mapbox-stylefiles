@@ -1,0 +1,18 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: ne-ls-country
+paint:
+  line-color:
+    - rgb
+    - 92
+    - 99
+    - 102
+  line-width: 1
+source: ne
+source-layer: country
+type: line

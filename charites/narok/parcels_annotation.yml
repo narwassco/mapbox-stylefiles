@@ -1,0 +1,17 @@
+id: parcels_annotation
+type: symbol
+source: assets
+source-layer: parcels_annotation
+minzoom: 17
+layout:
+  text-field:
+    - to-string
+    - - get
+      - parcel_no
+  text-font:
+    - Roboto Regular
+  text-size: 12
+  symbol-avoid-edges: true
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1

@@ -1,0 +1,32 @@
+id: block-number-label
+type: symbol
+metadata:
+  mapbox:featureComponent: buildings
+  mapbox:group: Buildings, building-labels
+source: composite
+source-layer: place_label
+minzoom: 16
+filter:
+  - all
+  - - '=='
+    - - get
+      - class
+    - settlement_subdivision
+  - - '=='
+    - - get
+      - type
+    - block
+layout:
+  text-field:
+    - get
+    - name
+  text-font:
+    - DIN Pro Italic
+    - Arial Unicode MS Regular
+  text-max-width: 7
+  text-size: 11
+paint:
+  text-color: hsl(35, 12%, 55%)
+  text-halo-color: hsl(35, 11%, 99%)
+  text-halo-width: 0.5
+  text-halo-blur: 0.5

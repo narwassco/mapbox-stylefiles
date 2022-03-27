@@ -1,0 +1,95 @@
+id: country-label
+type: symbol
+metadata:
+  mapbox:featureComponent: place-labels
+  mapbox:group: Place labels, place-labels
+source: composite
+source-layer: place_label
+minzoom: 1
+maxzoom: 10
+filter:
+  - '=='
+  - - get
+    - class
+  - country
+layout:
+  icon-image: ''
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-line-height: 1.1
+  text-max-width: 6
+  text-font:
+    - DIN Pro Medium
+    - Arial Unicode MS Regular
+  text-offset:
+    - literal
+    - - 0
+      - 0
+  text-justify:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - text_anchor
+      - - left
+        - bottom-left
+        - top-left
+      - left
+      - - right
+        - bottom-right
+        - top-right
+      - right
+      - center
+    - 7
+    - center
+  text-size:
+    - interpolate
+    - - cubic-bezier
+      - 0.2
+      - 0
+      - 0.7
+      - 1
+    - - zoom
+    - 1
+    - - step
+      - - get
+        - symbolrank
+      - 11
+      - 4
+      - 9
+      - 5
+      - 8
+    - 9
+    - - step
+      - - get
+        - symbolrank
+      - 28
+      - 4
+      - 22
+      - 5
+      - 21
+paint:
+  icon-opacity:
+    - step
+    - - zoom
+    - - case
+      - - has
+        - text_anchor
+      - 1
+      - 0
+    - 7
+    - 0
+  text-color: hsl(0, 0%, 95%)
+  text-halo-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 2
+    - hsla(0, 5%, 0%, 0.75)
+    - 3
+    - hsl(0, 5%, 0%)
+  text-halo-width: 1.25

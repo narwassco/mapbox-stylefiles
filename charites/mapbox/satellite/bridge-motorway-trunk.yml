@@ -1,0 +1,56 @@
+id: bridge-motorway-trunk
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, bridges
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+    - true
+    - false
+  - - <=
+    - - get
+      - layer
+    - 1
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap: round
+  line-join: round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 5
+    - 0.75
+    - 18
+    - 32
+  line-color:
+    - match
+    - - get
+      - class
+    - motorway
+    - hsla(26, 100%, 68%, 0.7)
+    - hsla(46, 87%, 68%, 0.7)
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - 1
+    - 15
+    - 0

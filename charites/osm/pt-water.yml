@@ -1,0 +1,18 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-water
+paint:
+  circle-color:
+    - rgb
+    - 13
+    - 71
+    - 161
+  circle-radius: 2.5
+source: v
+source-layer: water
+type: circle

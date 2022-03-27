@@ -1,0 +1,17 @@
+id: intake
+type: fill
+source: assets
+source-layer: plant
+minzoom: 10
+filter:
+  - match
+  - - get
+    - plant_type
+  - - INTAKE
+  - true
+  - false
+layout: {}
+paint:
+  fill-color: hsl(0, 18%, 85%)
+  fill-outline-color: hsl(0, 8%, 6%)
+  fill-opacity: 0.6

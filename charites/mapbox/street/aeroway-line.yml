@@ -1,0 +1,41 @@
+id: aeroway-line
+type: line
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, built
+source: composite
+source-layer: aeroway
+minzoom: 9
+filter:
+  - '=='
+  - - geometry-type
+  - LineString
+layout: {}
+paint:
+  line-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 15
+    - hsl(230, 23%, 82%)
+    - 16
+    - hsl(230, 37%, 84%)
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 9
+    - - match
+      - - get
+        - type
+      - runway
+      - 1
+      - 0.5
+    - 18
+    - - match
+      - - get
+        - type
+      - runway
+      - 80
+      - 20

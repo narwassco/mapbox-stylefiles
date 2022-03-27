@@ -1,0 +1,26 @@
+id: aerialway
+type: line
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, elevated
+source: composite
+source-layer: road
+minzoom: 12
+filter:
+  - '=='
+  - - get
+    - class
+  - aerialway
+layout:
+  line-join: round
+paint:
+  line-color: hsl(230, 10%, 74%)
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 0.5
+    - 20
+    - 1

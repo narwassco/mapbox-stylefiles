@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-structure
+paint:
+  fill-color:
+    - rgb
+    - 255
+    - 249
+    - 196
+source: v
+source-layer: structure
+type: fill

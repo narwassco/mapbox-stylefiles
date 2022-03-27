@@ -1,0 +1,12 @@
+id: pg-building-outline
+minzoom: 14
+paint:
+  line-color:
+    - rgb
+    - 183
+    - 174
+    - 174
+  line-width: 1
+source: open-buildings
+source-layer: open-buildings
+type: line

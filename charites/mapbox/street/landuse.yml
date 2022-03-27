@@ -1,0 +1,87 @@
+id: landuse
+type: fill
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, land
+source: composite
+source-layer: landuse
+minzoom: 5
+filter:
+  - match
+  - - get
+    - class
+  - - park
+    - airport
+    - glacier
+    - pitch
+    - sand
+    - facility
+  - true
+  - cemetery
+  - true
+  - school
+  - true
+  - hospital
+  - true
+  - false
+layout: {}
+paint:
+  fill-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 15
+    - - match
+      - - get
+        - class
+      - park
+      - hsl(99, 57%, 75%)
+      - airport
+      - hsl(230, 15%, 91%)
+      - cemetery
+      - hsl(81, 28%, 81%)
+      - glacier
+      - hsl(196, 70%, 90%)
+      - hospital
+      - hsl(340, 37%, 87%)
+      - pitch
+      - hsl(99, 58%, 70%)
+      - sand
+      - hsl(56, 47%, 87%)
+      - school
+      - hsl(50, 48%, 81%)
+      - hsl(35, 16%, 85%)
+    - 16
+    - - match
+      - - get
+        - class
+      - park
+      - hsl(99, 57%, 75%)
+      - airport
+      - hsl(230, 29%, 89%)
+      - cemetery
+      - hsl(81, 28%, 81%)
+      - glacier
+      - hsl(196, 70%, 90%)
+      - hospital
+      - hsl(340, 63%, 89%)
+      - pitch
+      - hsl(99, 58%, 70%)
+      - sand
+      - hsl(56, 47%, 87%)
+      - school
+      - hsl(50, 48%, 81%)
+      - hsl(35, 16%, 85%)
+  fill-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 5
+    - 0
+    - 6
+    - - match
+      - - get
+        - class
+      - glacier
+      - 0.5
+      - 1

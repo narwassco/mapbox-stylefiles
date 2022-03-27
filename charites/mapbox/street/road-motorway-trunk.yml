@@ -1,0 +1,72 @@
+id: road-motorway-trunk
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 13
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 13
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 5
+    - 0.75
+    - 18
+    - 32
+  line-color:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - class
+      - motorway
+      - hsl(26, 87%, 62%)
+      - hsl(0, 0%, 100%)
+    - 6
+    - - match
+      - - get
+        - class
+      - motorway
+      - hsl(26, 87%, 62%)
+      - hsl(46, 80%, 60%)
+    - 9
+    - - match
+      - - get
+        - class
+      - motorway
+      - hsl(26, 100%, 68%)
+      - hsl(46, 87%, 68%)

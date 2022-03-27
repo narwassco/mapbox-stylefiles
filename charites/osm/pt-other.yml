@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-other
+paint:
+  circle-color:
+    - rgb
+    - 49
+    - 27
+    - 146
+source: v
+source-layer: other
+type: circle

@@ -1,0 +1,35 @@
+filter:
+  - match
+  - - get
+    - layer
+  - '3'
+  - - match
+    - - get
+      - highway
+    - - primary
+      - trunk_link
+    - true
+    - false
+  - false
+id: ls-road-line-c-3
+layout:
+  line-cap: butt
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 204
+    - 184
+    - 192
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 312
+source: v
+source-layer: road
+type: line

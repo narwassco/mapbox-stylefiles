@@ -1,0 +1,41 @@
+id: road-polygon
+type: fill
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 12
+filter:
+  - all
+  - - '=='
+    - - geometry-type
+    - Polygon
+  - - match
+    - - get
+      - class
+    - - primary
+      - secondary
+      - tertiary
+      - primary_link
+      - secondary_link
+      - tertiary_link
+      - trunk
+      - trunk_link
+      - street
+      - street_limited
+      - track
+      - service
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+layout: {}
+paint:
+  fill-color: hsl(0, 0%, 100%)
+  fill-outline-color: hsl(230, 26%, 88%)

@@ -26,6 +26,30 @@ npm i
 npm run sprite
 ```
 
+### Build style.yml to style.json by charites
+
+```
+npm i @unvt/charites -g
+```
+
+- Live preview
+
+```
+charites serve charites/style-unvt.yml
+charites serve charites/style-buildings.yml
+charites serve charites/style-unvt-terrain.yml --provider mapbox --mapbox-access-token XXXX
+charites serve charites/style-mapbox-street.yml --provider mapbox --mapbox-access-token XXXX
+charites serve charites/style-mapbox-satellite.yml --provider mapbox --mapbox-access-token XXXX
+charites serve charites/style-mapbox-street-terrain.yml --provider mapbox --mapbox-access-token XXXX
+charites serve charites/style-mapbox-satellite-terrain.yml --provider mapbox --mapbox-access-token XXXX
+```
+
+- build
+
+```
+npm run build
+```
+
 ### Configuration
 Please configure your icons and output direcoties settings in [config.js](./test/config.js).
 

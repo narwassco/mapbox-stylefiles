@@ -1,0 +1,20 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-structure
+layout:
+  icon-image:
+    - match
+    - - get
+      - barrier
+    - gate
+    - prison-11
+    - circle-11
+minzoom: 17
+source: v
+source-layer: structure
+type: symbol

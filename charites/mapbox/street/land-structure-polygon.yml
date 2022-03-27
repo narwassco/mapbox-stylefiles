@@ -1,0 +1,20 @@
+id: land-structure-polygon
+type: fill
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, built
+source: composite
+source-layer: structure
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - geometry-type
+    - Polygon
+  - - '=='
+    - - get
+      - class
+    - land
+layout: {}
+paint:
+  fill-color: hsl(35, 12%, 89%)

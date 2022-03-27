@@ -1,0 +1,153 @@
+id: transit-label
+type: symbol
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, transit-labels
+source: composite
+source-layer: transit_stop_label
+minzoom: 12
+filter:
+  - step
+  - - zoom
+  - - all
+    - - match
+      - - get
+        - mode
+      - rail
+      - true
+      - metro_rail
+      - true
+      - false
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 15
+  - - all
+    - - match
+      - - get
+        - mode
+      - rail
+      - true
+      - metro_rail
+      - true
+      - light_rail
+      - true
+      - false
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 16
+  - - all
+    - - match
+      - - get
+        - mode
+      - ferry
+      - false
+      - bus
+      - false
+      - true
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 17
+  - - all
+    - - match
+      - - get
+        - mode
+      - ferry
+      - false
+      - true
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 19
+  - - match
+    - - get
+      - mode
+    - ferry
+    - false
+    - true
+layout:
+  text-size: 12
+  icon-image:
+    - get
+    - network
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+  text-justify:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - left
+    - center
+  text-offset:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - - literal
+      - - 1
+        - 0
+    - - literal
+      - - 0
+        - 0.8
+  text-anchor:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - left
+    - top
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 14
+    - - match
+      - - get
+        - mode
+      - - rail
+        - metro_rail
+      - - coalesce
+        - - get
+          - name_en
+        - - get
+          - name
+      - ''
+    - 16
+    - - match
+      - - get
+        - mode
+      - - bus
+        - bicycle
+      - ''
+      - - coalesce
+        - - get
+          - name_en
+        - - get
+          - name
+    - 18
+    - - coalesce
+      - - get
+        - name_en
+      - - get
+        - name
+  text-letter-spacing: 0.01
+  text-max-width:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - 15
+    - 9
+paint:
+  text-halo-color: hsl(0, 5%, 0%)
+  text-color: hsl(0, 0%, 100%)
+  text-halo-blur: 0.5
+  text-halo-width: 0.5

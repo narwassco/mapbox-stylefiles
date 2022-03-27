@@ -1,0 +1,37 @@
+id: bridge-oneway-arrow-white
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, bridges
+source: composite
+source-layer: road
+minzoom: 16
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+      - motorway_link
+      - trunk_link
+    - true
+    - false
+  - - '=='
+    - - get
+      - oneway
+    - 'true'
+layout:
+  symbol-placement: line
+  icon-image:
+    - step
+    - - zoom
+    - oneway-white-small
+    - 17
+    - oneway-white-large
+  symbol-spacing: 200
+paint: {}

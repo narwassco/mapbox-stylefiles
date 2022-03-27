@@ -1,0 +1,439 @@
+version: 8
+name: Streets
+metadata:
+  mapbox:type: default
+  mapbox:origin: streets-v11
+  mapbox:sdk-support:
+    js: 1.9.0
+    android: 8.6.0
+    ios: 5.6.0
+  mapbox:autocomposite: true
+  mapbox:groups:
+    Terrain, terrain-labels:
+      name: Terrain, terrain-labels
+      collapsed: false
+    Transit, transit-labels:
+      name: Transit, transit-labels
+      collapsed: false
+    Administrative boundaries, admin:
+      name: Administrative boundaries, admin
+      collapsed: false
+    Land & water, built:
+      name: Land & water, built
+      collapsed: false
+    Transit, bridges:
+      name: Transit, bridges
+      collapsed: false
+    Buildings, building-labels:
+      name: Buildings, building-labels
+      collapsed: false
+    Transit, surface:
+      name: Transit, surface
+      collapsed: false
+    Land & water, land:
+      name: Land & water, land
+      collapsed: false
+    Road network, bridges:
+      name: Road network, bridges
+      collapsed: false
+    Road network, tunnels:
+      name: Road network, tunnels
+      collapsed: false
+    Road network, road-labels:
+      name: Road network, road-labels
+      collapsed: false
+    Buildings, built:
+      name: Buildings, built
+      collapsed: false
+    Natural features, natural-labels:
+      name: Natural features, natural-labels
+      collapsed: false
+    Road network, surface:
+      name: Road network, surface
+      collapsed: false
+    Walking, cycling, etc., barriers-bridges:
+      name: Walking, cycling, etc., barriers-bridges
+      collapsed: false
+    Place labels, place-labels:
+      name: Place labels, place-labels
+      collapsed: false
+    Transit, ferries:
+      name: Transit, ferries
+      collapsed: false
+    Transit, elevated:
+      name: Transit, elevated
+      collapsed: false
+    Buildings, extruded:
+      name: Buildings, extruded
+      collapsed: false
+    Point of interest labels, poi-labels:
+      name: Point of interest labels, poi-labels
+      collapsed: false
+    Walking, cycling, etc., tunnels:
+      name: Walking, cycling, etc., tunnels
+      collapsed: false
+    Terrain, land:
+      name: Terrain, land
+      collapsed: false
+    Road network, tunnels-case:
+      name: Road network, tunnels-case
+      collapsed: false
+    Walking, cycling, etc., walking-cycling-labels:
+      name: Walking, cycling, etc., walking-cycling-labels
+      collapsed: false
+    Walking, cycling, etc., surface:
+      name: Walking, cycling, etc., surface
+      collapsed: false
+    Transit, built:
+      name: Transit, built
+      collapsed: false
+    Road network, surface-icons:
+      name: Road network, surface-icons
+      collapsed: false
+    Land & water, water:
+      name: Land & water, water
+      collapsed: false
+    Transit, ferry-aerialway-labels:
+      name: Transit, ferry-aerialway-labels
+      collapsed: false
+  mapbox:uiParadigm: layers
+  mapbox:trackposition: false
+  mapbox:decompiler:
+    id: cka9n3gdl2jwh1ioa2zsowqn5
+    componentVersion: 3.0.0
+    strata:
+      - id: streets-v11
+        order:
+          - - land-and-water
+            - land
+          - - land-and-water
+            - water
+          - - terrain
+            - land
+          - - land-and-water
+            - built
+          - - transit
+            - built
+          - - buildings
+            - built
+          - - road-network
+            - tunnels-case
+          - - walking-cycling
+            - tunnels
+          - - road-network
+            - tunnels
+          - - terrain
+            - surface
+          - - transit
+            - ferries
+          - - walking-cycling
+            - surface
+          - - road-network
+            - surface
+          - - transit
+            - surface
+          - - road-network
+            - surface-icons
+          - - walking-cycling
+            - barriers-bridges
+          - - road-network
+            - bridges
+          - - transit
+            - bridges
+          - - road-network
+            - traffic-and-closures
+          - - buildings
+            - extruded
+          - - transit
+            - elevated
+          - - admin-boundaries
+            - admin
+          - - terrain
+            - terrain-labels
+          - - buildings
+            - building-labels
+          - - road-network
+            - road-labels
+          - - walking-cycling
+            - walking-cycling-labels
+          - - transit
+            - ferry-aerialway-labels
+          - - natural-features
+            - natural-labels
+          - - point-of-interest-labels
+            - poi-labels
+          - - transit
+            - transit-labels
+          - - place-labels
+            - place-labels
+          - village
+          - dma
+          - parcels
+          - wtp
+          - intake
+          - pipeline
+          - tank
+          - valve
+          - firehydrant
+          - washout
+          - flow meter
+          - meter
+          - village_annotation
+          - dma-annotation
+          - parcels_annotation
+          - pipeline_annotation
+          - intake_annotation
+          - tank_annotation
+          - narwassco-annotation
+          - wtp_annotation
+    components:
+      road-network: 3.0.0
+      natural-features: 3.0.0
+      place-labels: 3.0.0
+      admin-boundaries: 3.0.0
+      point-of-interest-labels: 3.0.0
+      walking-cycling: 3.0.0
+      transit: 3.0.0
+      terrain: 3.0.0
+      land-and-water: 3.0.0
+      buildings: 3.0.0
+    propConfig:
+      road-network:
+        color-base: hsl(35, 14%, 94%)
+        color-road: hsl(0, 0%, 100%)
+        color-road-outline: hsl(230, 26%, 88%)
+        color-motorway-trunk: hsl(36, 87%, 68%)
+        color-road-label: hsl(0,0%, 0%)
+        turningCircles: true
+        fadeOutRoadsOnZoom: false
+      natural-features:
+        color-base: hsl(35, 14%, 94%)
+        color-water: hsl(196, 80%, 70%)
+        color-poi: hsl(26, 25%, 32%)
+      place-labels:
+        color-base: hsl(35, 14%, 94%)
+        color-place-label: hsl(230, 29%, 25%)
+      admin-boundaries:
+        color-base: hsl(35, 14%, 94%)
+        color-place-label: hsl(230, 29%, 25%)
+        admin0DashPattern: Solid
+        admin1DashPattern: Dash on zoom
+      point-of-interest-labels:
+        color-base: hsl(35, 14%, 94%)
+        color-greenspace: hsl(99, 57%, 75%)
+        color-greenspace-label: hsl(105, 30%, 33%)
+        color-hospital: hsl(340, 75%, 52%)
+        color-school: hsl(50, 100%, 40%)
+        color-poi: hsl(26, 25%, 32%)
+        controlDensityByClass: false
+      walking-cycling:
+        color-base: hsl(35, 14%, 94%)
+        color-greenspace: hsl(99, 57%, 75%)
+        color-greenspace-label: hsl(105, 30%, 33%)
+        color-road: hsl(0, 0%, 100%)
+        color-road-outline: hsl(230, 26%, 88%)
+        color-road-label: hsl(0,0%, 0%)
+      transit:
+        color-base: hsl(35, 14%, 94%)
+        color-transit: hsl(230, 48%, 44%)
+        color-road-label: hsl(0,0%, 0%)
+        color-water: hsl(196, 80%, 70%)
+        color-airport: hsl(230, 48%, 44%)
+        color-road: hsl(0, 0%, 100%)
+        color-road-outline: hsl(230, 26%, 88%)
+      terrain:
+        color-base: hsl(35, 14%, 94%)
+        color-greenspace: hsl(99, 57%, 75%)
+        color-greenspace-label: hsl(105, 30%, 33%)
+        cliffs: false
+        contours: true
+        contourStyle: Outdoors
+      land-and-water:
+        color-base: hsl(35, 14%, 94%)
+        color-water: hsl(196, 80%, 70%)
+        color-greenspace: hsl(99, 57%, 75%)
+        color-hospital: hsl(340, 75%, 52%)
+        color-school: hsl(50, 100%, 40%)
+        color-airport: hsl(230, 48%, 44%)
+        transitionLandOnZoom: true
+      buildings:
+        color-base: hsl(35, 14%, 94%)
+        color-underground: hsl(260, 67%, 80%)
+        underground: true
+        3D: true
+center:
+  - 35.86921796124943
+  - -1.0879374601247491
+zoom: 13.658769303224785
+bearing: -0.04426414712531824
+pitch: 0
+sources:
+  composite:
+    url: mapbox://mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2
+    type: vector
+  assets:
+    attribution: ©NARWASSCO,Ltd.
+    minzoom: 10
+    maxzoom: 16
+    tiles:
+      - https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt
+    type: vector
+  narok-dem:
+    type: raster-dem
+    tiles:
+      - https://narwassco.github.io/narok-terrain/tiles/{z}/{x}/{y}.png
+    tileSize: 512
+    minzoom: 5
+    maxzoom: 15
+terrain:
+  source: narok-dem
+  exaggeration: 1.5
+sprite: https://narwassco.github.io/mapbox-stylefiles/street/sprite/sprite
+glyphs: mapbox://fonts/narwassco/{fontstack}/{range}.pbf
+layers:
+  - !!inc/file mapbox/terrain/sky.yml
+  - !!inc/file mapbox/street/land.yml
+  - !!inc/file mapbox/street/landcover.yml
+  - !!inc/file mapbox/street/national-park.yml
+  - !!inc/file mapbox/street/landuse.yml
+  - !!inc/file mapbox/street/pitch-outline.yml
+  - !!inc/file mapbox/street/waterway-shadow.yml
+  - !!inc/file mapbox/street/water-shadow.yml
+  - !!inc/file mapbox/street/waterway.yml
+  - !!inc/file mapbox/street/water.yml
+  - !!inc/file mapbox/street/hillshade.yml
+  - !!inc/file mapbox/street/contour-line.yml
+  - !!inc/file mapbox/street/land-structure-polygon.yml
+  - !!inc/file mapbox/street/land-structure-line.yml
+  - !!inc/file mapbox/street/aeroway-polygon.yml
+  - !!inc/file mapbox/street/aeroway-line.yml
+  - !!inc/file mapbox/street/building-underground.yml
+  - !!inc/file mapbox/street/tunnel-street-minor-low.yml
+  - !!inc/file mapbox/street/tunnel-street-minor-case.yml
+  - !!inc/file mapbox/street/tunnel-primary-secondary-tertiary-case.yml
+  - !!inc/file mapbox/street/tunnel-major-link-case.yml
+  - !!inc/file mapbox/street/tunnel-motorway-trunk-case.yml
+  - !!inc/file mapbox/street/tunnel-construction.yml
+  - !!inc/file mapbox/street/tunnel-path.yml
+  - !!inc/file mapbox/street/tunnel-steps.yml
+  - !!inc/file mapbox/street/tunnel-pedestrian.yml
+  - !!inc/file mapbox/street/tunnel-major-link.yml
+  - !!inc/file mapbox/street/tunnel-street-minor.yml
+  - !!inc/file mapbox/street/tunnel-primary-secondary-tertiary.yml
+  - !!inc/file mapbox/street/tunnel-oneway-arrow-blue.yml
+  - !!inc/file mapbox/street/tunnel-motorway-trunk.yml
+  - !!inc/file mapbox/street/tunnel-oneway-arrow-white.yml
+  - !!inc/file mapbox/street/ferry.yml
+  - !!inc/file mapbox/street/ferry-auto.yml
+  - !!inc/file mapbox/street/road-path-bg.yml
+  - !!inc/file mapbox/street/road-steps-bg.yml
+  - !!inc/file mapbox/street/road-pedestrian-case.yml
+  - !!inc/file mapbox/street/road-path.yml
+  - !!inc/file mapbox/street/road-steps.yml
+  - !!inc/file mapbox/street/road-pedestrian.yml
+  - !!inc/file mapbox/street/road-pedestrian-polygon-fill.yml
+  - !!inc/file mapbox/street/road-pedestrian-polygon-pattern.yml
+  - !!inc/file mapbox/street/golf-hole-line.yml
+  - !!inc/file mapbox/street/turning-feature-outline.yml
+  - !!inc/file mapbox/street/road-minor-low.yml
+  - !!inc/file mapbox/street/road-minor-case.yml
+  - !!inc/file mapbox/street/road-street-low.yml
+  - !!inc/file mapbox/street/road-street-case.yml
+  - !!inc/file mapbox/street/road-secondary-tertiary-case.yml
+  - !!inc/file mapbox/street/road-primary-case.yml
+  - !!inc/file mapbox/street/road-major-link-case.yml
+  - !!inc/file mapbox/street/road-motorway-trunk-case.yml
+  - !!inc/file mapbox/street/road-construction.yml
+  - !!inc/file mapbox/street/road-major-link.yml
+  - !!inc/file mapbox/street/road-polygon.yml
+  - !!inc/file mapbox/street/road-minor.yml
+  - !!inc/file mapbox/street/road-street.yml
+  - !!inc/file mapbox/street/road-secondary-tertiary.yml
+  - !!inc/file mapbox/street/road-primary.yml
+  - !!inc/file mapbox/street/road-oneway-arrow-blue.yml
+  - !!inc/file mapbox/street/road-motorway-trunk.yml
+  - !!inc/file mapbox/street/road-rail.yml
+  - !!inc/file mapbox/street/road-rail-tracks.yml
+  - !!inc/file mapbox/street/level-crossing.yml
+  - !!inc/file mapbox/street/road-oneway-arrow-white.yml
+  - !!inc/file mapbox/street/turning-feature.yml
+  - !!inc/file mapbox/street/bridge-path-bg.yml
+  - !!inc/file mapbox/street/bridge-steps-bg.yml
+  - !!inc/file mapbox/street/bridge-pedestrian-case.yml
+  - !!inc/file mapbox/street/bridge-path.yml
+  - !!inc/file mapbox/street/bridge-steps.yml
+  - !!inc/file mapbox/street/bridge-pedestrian.yml
+  - !!inc/file mapbox/street/bridge-street-minor-low.yml
+  - !!inc/file mapbox/street/bridge-street-minor-case.yml
+  - !!inc/file mapbox/street/bridge-primary-secondary-tertiary-case.yml
+  - !!inc/file mapbox/street/bridge-major-link-case.yml
+  - !!inc/file mapbox/street/bridge-motorway-trunk-case.yml
+  - !!inc/file mapbox/street/bridge-construction.yml
+  - !!inc/file mapbox/street/bridge-major-link.yml
+  - !!inc/file mapbox/street/bridge-street-minor.yml
+  - !!inc/file mapbox/street/bridge-primary-secondary-tertiary.yml
+  - !!inc/file mapbox/street/bridge-oneway-arrow-blue.yml
+  - !!inc/file mapbox/street/bridge-motorway-trunk.yml
+  - !!inc/file mapbox/street/bridge-major-link-2-case.yml
+  - !!inc/file mapbox/street/bridge-motorway-trunk-2-case.yml
+  - !!inc/file mapbox/street/bridge-major-link-2.yml
+  - !!inc/file mapbox/street/bridge-motorway-trunk-2.yml
+  - !!inc/file mapbox/street/bridge-oneway-arrow-white.yml
+  - !!inc/file mapbox/street/bridge-rail.yml
+  - !!inc/file mapbox/street/bridge-rail-tracks.yml
+  - !!inc/file mapbox/street/building-extrusion.yml
+  - !!inc/file mapbox/street/aerialway.yml
+  - !!inc/file mapbox/street/admin-1-boundary-bg.yml
+  - !!inc/file mapbox/street/admin-0-boundary-bg.yml
+  - !!inc/file mapbox/street/admin-1-boundary.yml
+  - !!inc/file mapbox/street/admin-0-boundary.yml
+  - !!inc/file mapbox/street/admin-0-boundary-disputed.yml
+  - !!inc/file mapbox/street/contour-label.yml
+  - !!inc/file mapbox/street/building-number-label.yml
+  - !!inc/file mapbox/street/block-number-label.yml
+  - !!inc/file mapbox/street/road-label.yml
+  - !!inc/file mapbox/street/road-intersection.yml
+  - !!inc/file mapbox/street/road-number-shield.yml
+  - !!inc/file mapbox/street/road-exit-shield.yml
+  - !!inc/file mapbox/street/path-pedestrian-label.yml
+  - !!inc/file mapbox/street/golf-hole-label.yml
+  - !!inc/file mapbox/street/ferry-aerialway-label.yml
+  - !!inc/file mapbox/street/waterway-label.yml
+  - !!inc/file mapbox/street/natural-line-label.yml
+  - !!inc/file mapbox/street/natural-point-label.yml
+  - !!inc/file mapbox/street/water-line-label.yml
+  - !!inc/file mapbox/street/water-point-label.yml
+  - !!inc/file mapbox/street/poi-label.yml
+  - !!inc/file mapbox/street/transit-label.yml
+  - !!inc/file mapbox/street/airport-label.yml
+  - !!inc/file mapbox/street/settlement-subdivision-label.yml
+  - !!inc/file mapbox/street/settlement-minor-label.yml
+  - !!inc/file mapbox/street/settlement-major-label.yml
+  - !!inc/file mapbox/street/state-label.yml
+  - !!inc/file mapbox/street/country-label.yml
+  - !!inc/file narok/village.yml
+  - !!inc/file narok/dma.yml
+  - !!inc/file narok/parcels.yml
+  - !!inc/file narok/wtp.yml
+  - !!inc/file narok/intake.yml
+  - !!inc/file narok/pipeline.yml
+  - !!inc/file narok/tank.yml
+  - !!inc/file narok/valve.yml
+  - !!inc/file narok/firehydrant.yml
+  - !!inc/file narok/washout.yml
+  - !!inc/file narok/flow meter.yml
+  - !!inc/file narok/meter.yml
+  - !!inc/file narok/village_annotation.yml
+  - !!inc/file narok/dma-annotation.yml
+  - !!inc/file narok/parcels_annotation.yml
+  - !!inc/file narok/pipeline_annotation.yml
+  - !!inc/file narok/intake_annotation.yml
+  - !!inc/file narok/tank_annotation.yml
+  - !!inc/file mapbox/narok/narwassco-annotation.yml
+  - !!inc/file narok/wtp_annotation.yml
+created: '2020-05-16T13:01:33.767Z'
+id: cka9n3gdl2jwh1ioa2zsowqn5
+modified: '2020-05-22T14:45:39.163Z'
+owner: narwassco
+visibility: private
+draft: false

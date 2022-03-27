@@ -1,0 +1,76 @@
+id: contour-line
+type: line
+metadata:
+  mapbox:featureComponent: terrain
+  mapbox:group: Terrain, land
+source: composite
+source-layer: contour
+minzoom: 11
+filter:
+  - '!='
+  - - get
+    - index
+  - -1
+layout: {}
+paint:
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 11
+    - - match
+      - - get
+        - index
+      - - 1
+        - 2
+      - 0.15
+      - 0.25
+    - 12
+    - - match
+      - - get
+        - index
+      - - 1
+        - 2
+      - 0.3
+      - 0.5
+  line-color: hsl(105, 30%, 32%)
+  line-width:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - - match
+      - - get
+        - index
+      - - 1
+        - 2
+      - 0.5
+      - 0.6
+    - 16
+    - - match
+      - - get
+        - index
+      - - 1
+        - 2
+      - 0.8
+      - 1.2
+  line-offset:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - - match
+      - - get
+        - index
+      - - 1
+        - 2
+      - 1
+      - 0.6
+    - 16
+    - - match
+      - - get
+        - index
+      - - 1
+        - 2
+      - 1.6
+      - 1.2

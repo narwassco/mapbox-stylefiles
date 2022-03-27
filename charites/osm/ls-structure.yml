@@ -1,0 +1,23 @@
+filter:
+  - match
+  - - get
+    - aeroway
+  - - taxiway
+    - runway
+  - false
+  - - match
+    - - geometry-type
+    - - LineString
+      - MultiLineString
+    - true
+    - false
+id: ls-structure
+paint:
+  line-color:
+    - rgb
+    - 158
+    - 158
+    - 158
+source: v
+source-layer: structure
+type: line

@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - LineString
+    - MultiLineString
+  - true
+  - false
+id: ls-landuse
+paint:
+  line-color:
+    - rgb
+    - 205
+    - 220
+    - 57
+source: v
+source-layer: landuse
+type: line

@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-railway
+paint:
+  fill-color:
+    - rgb
+    - 255
+    - 190
+    - 231
+source: v
+source-layer: railway
+type: fill

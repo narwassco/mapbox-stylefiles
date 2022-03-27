@@ -1,0 +1,30 @@
+id: valve
+type: symbol
+source: assets
+source-layer: valve
+minzoom: 15
+layout:
+  icon-image: valve
+  icon-size: 0.7
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 16
+    - - concat
+      - - to-string
+        - - get
+          - valvetype
+      - ' '
+      - - get
+        - pipesize
+  text-font:
+    - Roboto Regular
+  text-size: 12
+  text-offset:
+    - 0
+    - 1.5
+  text-max-width: 6
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1

@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - LineString
+    - MultiLineString
+  - true
+  - false
+id: ls-other
+paint:
+  line-color:
+    - rgb
+    - 103
+    - 58
+    - 183
+source: v
+source-layer: other
+type: line

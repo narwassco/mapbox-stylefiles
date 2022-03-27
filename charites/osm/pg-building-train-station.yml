@@ -1,0 +1,48 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - - match
+    - - get
+      - building
+    - - train_station
+      - roof
+    - true
+    - - match
+      - - get
+        - public_transport
+      - station
+      - true
+      - false
+  - false
+id: pg-building-train-station
+paint:
+  fill-color:
+    - match
+    - - get
+      - layer
+    - - '-1'
+      - '-2'
+      - '-3'
+      - '-4'
+      - '-5'
+    - - rgb
+      - 238
+      - 238
+      - 238
+    - - rgb
+      - 222
+      - 215
+      - 215
+  fill-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 16
+    - 1
+    - 17
+    - 0.4
+source: v
+source-layer: building
+type: fill

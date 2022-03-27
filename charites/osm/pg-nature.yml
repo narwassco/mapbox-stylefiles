@@ -1,0 +1,18 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-nature
+paint:
+  fill-color:
+    - rgb
+    - 200
+    - 233
+    - 188
+  fill-opacity: 0.4
+source: v
+source-layer: nature
+type: fill

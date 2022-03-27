@@ -1,0 +1,26 @@
+id: dma-annotation
+type: symbol
+source: assets
+source-layer: point_annotation
+minzoom: 13
+maxzoom: 17
+filter:
+  - match
+  - - get
+    - layer
+  - - dma
+  - true
+  - false
+layout:
+  text-field:
+    - to-string
+    - - get
+      - name
+  icon-image: pe-regional-4
+  icon-text-fit: both
+  icon-size: 1.5
+  text-font:
+    - Roboto Regular
+  text-size: 14
+paint:
+  text-color: hsl(33, 100%, 50%)

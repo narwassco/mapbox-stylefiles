@@ -1,0 +1,22 @@
+id: building-number-label
+type: symbol
+metadata:
+  mapbox:featureComponent: buildings
+  mapbox:group: Buildings, building-labels
+source: composite
+source-layer: housenum_label
+minzoom: 17
+layout:
+  text-field:
+    - get
+    - house_num
+  text-font:
+    - DIN Pro Italic
+    - Arial Unicode MS Regular
+  text-padding: 4
+  text-max-width: 7
+  text-size: 9.5
+paint:
+  text-color: hsl(35, 2%, 68%)
+  text-halo-color: hsl(35, 7%, 90%)
+  text-halo-width: 0.5

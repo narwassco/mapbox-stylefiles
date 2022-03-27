@@ -1,0 +1,71 @@
+id: road-oneway-arrow-blue
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 15
+filter:
+  - all
+  - - '=='
+    - - get
+      - oneway
+    - 'true'
+  - - step
+    - - zoom
+    - - match
+      - - get
+        - class
+      - - primary
+        - secondary
+        - tertiary
+        - street
+        - street_limited
+      - true
+      - false
+    - 16
+    - - match
+      - - get
+        - class
+      - - primary
+        - secondary
+        - tertiary
+        - street
+        - street_limited
+        - primary_link
+        - secondary_link
+        - tertiary_link
+        - service
+        - track
+      - true
+      - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+layout:
+  symbol-placement: line
+  icon-image:
+    - step
+    - - zoom
+    - oneway-small
+    - 17
+    - - match
+      - - get
+        - class
+      - - primary
+        - secondary
+        - tertiary
+        - street
+        - street_limited
+      - oneway-large
+      - oneway-small
+    - 18
+    - oneway-large
+  symbol-spacing: 200
+  icon-rotation-alignment: map
+paint: {}

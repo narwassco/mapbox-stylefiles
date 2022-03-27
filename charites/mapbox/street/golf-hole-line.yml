@@ -1,0 +1,16 @@
+id: golf-hole-line
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., surface
+source: composite
+source-layer: road
+minzoom: 16
+filter:
+  - '=='
+  - - get
+    - class
+  - golf
+layout: {}
+paint:
+  line-color: hsl(99, 27%, 69%)

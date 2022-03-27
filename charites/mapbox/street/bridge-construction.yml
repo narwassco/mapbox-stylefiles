@@ -1,0 +1,55 @@
+id: bridge-construction
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, bridges
+source: composite
+source-layer: road
+minzoom: 14
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - '=='
+    - - get
+      - class
+    - construction
+  - - '=='
+    - - geometry-type
+    - LineString
+layout: {}
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 2
+    - 18
+    - 18
+  line-color: hsl(230, 26%, 88%)
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 0.4
+        - 0.8
+    - 15
+    - - literal
+      - - 0.3
+        - 0.6
+    - 16
+    - - literal
+      - - 0.2
+        - 0.3
+    - 17
+    - - literal
+      - - 0.2
+        - 0.25
+    - 18
+    - - literal
+      - - 0.15
+        - 0.15

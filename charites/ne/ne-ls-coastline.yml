@@ -1,0 +1,18 @@
+filter:
+  - match
+  - - geometry-type
+  - - LineString
+    - MultiLineString
+  - true
+  - false
+id: ne-ls-coastline
+paint:
+  line-color:
+    - rgb
+    - 20
+    - 150
+    - 255
+  line-width: 2
+source: ne
+source-layer: coastline
+type: line

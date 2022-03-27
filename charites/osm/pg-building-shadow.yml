@@ -1,0 +1,36 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - - match
+    - - get
+      - layer
+    - - '-1'
+      - '-2'
+      - '-3'
+      - '-4'
+      - '-5'
+    - false
+    - - match
+      - - get
+        - building
+      - - train_station
+        - roof
+      - false
+      - true
+  - false
+id: pg-building-shadow
+minzoom: 16
+paint:
+  fill-color:
+    - rgb
+    - 131
+    - 124
+    - 124
+  fill-translate:
+    - 2
+    - 2
+source: v
+source-layer: building
+type: fill

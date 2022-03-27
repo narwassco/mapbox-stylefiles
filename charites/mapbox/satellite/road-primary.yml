@@ -1,0 +1,56 @@
+id: road-primary
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 7
+filter:
+  - all
+  - - '=='
+    - - get
+      - class
+    - primary
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 14
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 5
+    - 0.75
+    - 18
+    - 32
+  line-color: hsla(0, 0%, 90%, 0.5)
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - 1
+    - 15
+    - 0

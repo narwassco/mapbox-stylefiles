@@ -1,0 +1,56 @@
+id: bridge-path
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., barriers-bridges
+source: composite
+source-layer: road
+minzoom: 14
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - '=='
+    - - get
+      - class
+    - path
+  - - '=='
+    - - geometry-type
+    - LineString
+  - - '!='
+    - - get
+      - type
+    - steps
+layout:
+  line-join: round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 15
+    - 1
+    - 18
+    - 4
+  line-color: hsl(0, 0%, 100%)
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 1
+        - 0
+    - 15
+    - - literal
+      - - 1.75
+        - 1
+    - 16
+    - - literal
+      - - 1
+        - 0.75
+    - 17
+    - - literal
+      - - 1
+        - 0.5

@@ -1,0 +1,43 @@
+id: contour-label
+type: symbol
+metadata:
+  mapbox:featureComponent: terrain
+  mapbox:group: Terrain, terrain-labels
+source: composite
+source-layer: contour
+minzoom: 11
+filter:
+  - any
+  - - '=='
+    - - get
+      - index
+    - 10
+  - - '=='
+    - - get
+      - index
+    - 5
+layout:
+  text-field:
+    - concat
+    - - get
+      - ele
+    - ' m'
+  symbol-placement: line
+  text-pitch-alignment: viewport
+  text-max-angle: 25
+  text-padding: 5
+  text-font:
+    - DIN Pro Medium
+    - Arial Unicode MS Regular
+  text-size:
+    - interpolate
+    - - linear
+    - - zoom
+    - 15
+    - 9.5
+    - 20
+    - 12
+paint:
+  text-color: hsl(105, 17%, 34%)
+  text-halo-width: 1
+  text-halo-color: hsla(35, 19%, 100%, 0.5)

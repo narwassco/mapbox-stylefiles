@@ -1,0 +1,38 @@
+filter:
+  - match
+  - - get
+    - highway
+  - motorway
+  - - match
+    - - get
+      - layer
+    - - '-1'
+      - '-2'
+      - '-3'
+      - '-4'
+      - '-5'
+    - true
+    - false
+  - false
+id: ls-road-line-a-underground
+layout:
+  line-cap: round
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 245
+    - 245
+    - 245
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 360
+source: v
+source-layer: road
+type: line

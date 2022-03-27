@@ -1,0 +1,240 @@
+id: settlement-minor-label
+type: symbol
+metadata:
+  mapbox:featureComponent: place-labels
+  mapbox:group: Place labels, place-labels
+source: composite
+source-layer: place_label
+maxzoom: 15
+filter:
+  - all
+  - - <=
+    - - get
+      - filterrank
+    - 3
+  - - '=='
+    - - get
+      - class
+    - settlement
+  - - step
+    - - zoom
+    - true
+    - 8
+    - - '>='
+      - - get
+        - symbolrank
+      - 11
+    - 10
+    - - '>='
+      - - get
+        - symbolrank
+      - 12
+    - 11
+    - - '>='
+      - - get
+        - symbolrank
+      - 13
+    - 12
+    - - '>='
+      - - get
+        - symbolrank
+      - 15
+    - 13
+    - - '>='
+      - - get
+        - symbolrank
+      - 11
+    - 14
+    - - '>='
+      - - get
+        - symbolrank
+      - 13
+layout:
+  text-line-height: 1.1
+  text-size:
+    - interpolate
+    - - cubic-bezier
+      - 0.2
+      - 0
+      - 0.9
+      - 1
+    - - zoom
+    - 3
+    - - step
+      - - get
+        - symbolrank
+      - 12
+      - 9
+      - 11
+      - 10
+      - 10.5
+      - 12
+      - 9.5
+      - 14
+      - 8.5
+      - 16
+      - 6.5
+      - 17
+      - 4
+    - 13
+    - - step
+      - - get
+        - symbolrank
+      - 25
+      - 9
+      - 23
+      - 10
+      - 21
+      - 11
+      - 19
+      - 12
+      - 18
+      - 13
+      - 17
+      - 15
+      - 15
+  icon-image:
+    - step
+    - - zoom
+    - - case
+      - - '=='
+        - - get
+          - capital
+        - 2
+      - border-dot-13
+      - - step
+        - - get
+          - symbolrank
+        - dot-11
+        - 9
+        - dot-10
+        - 11
+        - dot-9
+    - 8
+    - ''
+  text-font:
+    - DIN Pro Medium
+    - Arial Unicode MS Regular
+  text-justify:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - text_anchor
+      - - left
+        - bottom-left
+        - top-left
+      - left
+      - - right
+        - bottom-right
+        - top-right
+      - right
+      - center
+    - 8
+    - center
+  text-offset:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - capital
+      - 2
+      - - match
+        - - get
+          - text_anchor
+        - bottom
+        - - literal
+          - - 0
+            - -0.3
+        - bottom-left
+        - - literal
+          - - 0.3
+            - -0.1
+        - left
+        - - literal
+          - - 0.45
+            - 0.1
+        - top-left
+        - - literal
+          - - 0.3
+            - 0.1
+        - top
+        - - literal
+          - - 0
+            - 0.3
+        - top-right
+        - - literal
+          - - -0.3
+            - 0.1
+        - right
+        - - literal
+          - - -0.45
+            - 0
+        - bottom-right
+        - - literal
+          - - -0.3
+            - -0.1
+        - - literal
+          - - 0
+            - -0.3
+      - - match
+        - - get
+          - text_anchor
+        - bottom
+        - - literal
+          - - 0
+            - -0.25
+        - bottom-left
+        - - literal
+          - - 0.2
+            - -0.05
+        - left
+        - - literal
+          - - 0.4
+            - 0.05
+        - top-left
+        - - literal
+          - - 0.2
+            - 0.05
+        - top
+        - - literal
+          - - 0
+            - 0.25
+        - top-right
+        - - literal
+          - - -0.2
+            - 0.05
+        - right
+        - - literal
+          - - -0.4
+            - 0.05
+        - bottom-right
+        - - literal
+          - - -0.2
+            - -0.05
+        - - literal
+          - - 0
+            - -0.25
+    - 8
+    - - literal
+      - - 0
+        - 0
+  text-anchor:
+    - step
+    - - zoom
+    - - get
+      - text_anchor
+    - 8
+    - center
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-max-width: 7
+paint:
+  text-color: hsl(0, 0%, 95%)
+  text-halo-color: hsl(0, 5%, 0%)
+  text-halo-width: 1
+  text-halo-blur: 1

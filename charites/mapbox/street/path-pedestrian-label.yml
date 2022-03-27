@@ -1,0 +1,64 @@
+id: path-pedestrian-label
+type: symbol
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., walking-cycling-labels
+source: composite
+source-layer: road
+minzoom: 12
+filter:
+  - step
+  - - zoom
+  - - match
+    - - get
+      - class
+    - - pedestrian
+    - true
+    - false
+  - 15
+  - - match
+    - - get
+      - class
+    - - path
+      - pedestrian
+    - true
+    - false
+layout:
+  text-size:
+    - interpolate
+    - - linear
+    - - zoom
+    - 10
+    - - match
+      - - get
+        - class
+      - pedestrian
+      - 9
+      - 6.5
+    - 18
+    - - match
+      - - get
+        - class
+      - pedestrian
+      - 14
+      - 13
+  text-max-angle: 30
+  text-font:
+    - DIN Pro Regular
+    - Arial Unicode MS Regular
+  symbol-placement: line
+  text-padding: 1
+  text-rotation-alignment: map
+  text-pitch-alignment: viewport
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-letter-spacing: 0.01
+paint:
+  text-color: hsl(0,0%, 0%)
+  text-halo-color: hsl(0, 0%, 100%)
+  text-halo-width: 1
+  text-halo-blur: 1

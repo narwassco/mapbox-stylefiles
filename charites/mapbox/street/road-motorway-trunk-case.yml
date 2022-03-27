@@ -1,0 +1,71 @@
+id: road-motorway-trunk-case
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 5
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 14
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 10
+    - 1
+    - 18
+    - 2
+  line-color: hsl(230, 26%, 100%)
+  line-gap-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 5
+    - 0.75
+    - 18
+    - 32
+  line-opacity:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - class
+      - motorway
+      - 1
+      - 0
+    - 6
+    - 1

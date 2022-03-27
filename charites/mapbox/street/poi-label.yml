@@ -1,0 +1,189 @@
+id: poi-label
+type: symbol
+metadata:
+  mapbox:featureComponent: point-of-interest-labels
+  mapbox:group: Point of interest labels, poi-labels
+source: composite
+source-layer: poi_label
+minzoom: 6
+filter:
+  - <=
+  - - get
+    - filterrank
+  - - +
+    - - step
+      - - zoom
+      - 0
+      - 16
+      - 1
+      - 17
+      - 2
+    - 3
+layout:
+  text-size:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 5
+      - 12
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 13
+      - 12
+  icon-image:
+    - step
+    - - zoom
+    - - concat
+      - - get
+        - maki
+      - '-11'
+    - 15
+    - - concat
+      - - get
+        - maki
+      - '-15'
+  text-font:
+    - DIN Pro Medium
+    - Arial Unicode MS Regular
+  text-offset:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - - literal
+        - - 0
+          - 0
+      - 5
+      - - literal
+        - - 0
+          - 0.75
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - - literal
+        - - 0
+          - 0
+      - 13
+      - - literal
+        - - 0
+          - 0.75
+  text-anchor:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - center
+      - 5
+      - top
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - center
+      - 13
+      - top
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+paint:
+  icon-opacity:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - 0
+      - 5
+      - 1
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - 0
+      - 13
+      - 1
+  text-halo-color:
+    - match
+    - - get
+      - class
+    - park_like
+    - hsl(99, 62%, 100%)
+    - education
+    - hsl(50, 62%, 100%)
+    - medical
+    - hsl(340, 68%, 100%)
+    - hsl(35, 19%, 100%)
+  text-halo-width: 0.5
+  text-halo-blur: 0.5
+  text-color:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - - match
+        - - get
+          - class
+        - food_and_drink
+        - hsl(22, 55%, 55%)
+        - park_like
+        - hsl(105, 31%, 43%)
+        - education
+        - hsl(50, 40%, 40%)
+        - medical
+        - hsl(340, 30%, 52%)
+        - hsl(26, 20%, 42%)
+      - 5
+      - - match
+        - - get
+          - class
+        - food_and_drink
+        - hsl(22, 85%, 38%)
+        - park_like
+        - hsl(105, 30%, 32%)
+        - education
+        - hsl(50, 100%, 20%)
+        - medical
+        - hsl(340, 39%, 42%)
+        - hsl(26, 25%, 32%)
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - - match
+        - - get
+          - class
+        - food_and_drink
+        - hsl(22, 55%, 55%)
+        - park_like
+        - hsl(105, 31%, 43%)
+        - education
+        - hsl(50, 40%, 40%)
+        - medical
+        - hsl(340, 30%, 52%)
+        - hsl(26, 20%, 42%)
+      - 13
+      - - match
+        - - get
+          - class
+        - food_and_drink
+        - hsl(22, 85%, 38%)
+        - park_like
+        - hsl(105, 30%, 32%)
+        - education
+        - hsl(50, 100%, 20%)
+        - medical
+        - hsl(340, 39%, 42%)
+        - hsl(26, 25%, 32%)

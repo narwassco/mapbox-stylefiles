@@ -1,0 +1,20 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-nature
+layout:
+  icon-image:
+    - match
+    - - get
+      - natural
+    - tree
+    - park-11
+    - circle-11
+minzoom: 18
+source: v
+source-layer: nature
+type: symbol

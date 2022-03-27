@@ -1,0 +1,28 @@
+id: building-underground
+type: fill
+metadata:
+  mapbox:featureComponent: buildings
+  mapbox:group: Buildings, built
+source: composite
+source-layer: building
+minzoom: 15
+filter:
+  - all
+  - - '=='
+    - - get
+      - underground
+    - 'true'
+  - - '=='
+    - - geometry-type
+    - Polygon
+layout: {}
+paint:
+  fill-color: hsl(260, 67%, 80%)
+  fill-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 15
+    - 0
+    - 16
+    - 0.5

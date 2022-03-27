@@ -1,0 +1,110 @@
+id: water-line-label
+type: symbol
+metadata:
+  mapbox:featureComponent: natural-features
+  mapbox:group: Natural features, natural-labels
+source: composite
+source-layer: natural_label
+filter:
+  - all
+  - - case
+    - - '=='
+      - - get
+        - disputed
+      - 'true'
+    - - all
+      - - match
+        - - get
+          - class
+        - - bay
+          - ocean
+          - reservoir
+          - sea
+          - water
+          - disputed_bay
+          - disputed_ocean
+          - disputed_reservoir
+          - disputed_sea
+          - disputed_water
+        - true
+        - false
+      - - match
+        - - get
+          - worldview
+        - - all
+          - US
+        - true
+        - false
+    - - match
+      - - get
+        - class
+      - - bay
+        - ocean
+        - reservoir
+        - sea
+        - water
+      - true
+      - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  text-size:
+    - interpolate
+    - - linear
+    - - zoom
+    - 7
+    - - step
+      - - get
+        - sizerank
+      - 24
+      - 6
+      - 18
+      - 12
+      - 12
+    - 10
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 9
+      - 12
+    - 18
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 9
+      - 16
+  text-max-angle: 30
+  text-letter-spacing:
+    - match
+    - - get
+      - class
+    - ocean
+    - 0.25
+    - - sea
+      - bay
+    - 0.15
+    - 0
+  text-font:
+    - DIN Pro Italic
+    - Arial Unicode MS Regular
+  symbol-placement: line-center
+  text-pitch-alignment: viewport
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+paint:
+  text-color:
+    - match
+    - - get
+      - class
+    - - bay
+      - ocean
+      - sea
+    - hsl(196, 76%, 50%)
+    - hsl(196, 48%, 57%)

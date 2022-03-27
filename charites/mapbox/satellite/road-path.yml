@@ -1,0 +1,80 @@
+id: road-path
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., surface
+source: composite
+source-layer: road
+minzoom: 12
+filter:
+  - all
+  - - '=='
+    - - get
+      - class
+    - path
+  - - step
+    - - zoom
+    - - '!'
+      - - match
+        - - get
+          - type
+        - - steps
+          - sidewalk
+          - crossing
+        - true
+        - false
+    - 16
+    - - '!='
+      - - get
+        - type
+      - steps
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 13
+    - 0.5
+    - 14
+    - 1
+    - 15
+    - 1
+    - 18
+    - 4
+  line-color: hsl(0, 0%, 22%)
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 1
+        - 0
+    - 15
+    - - literal
+      - - 1.75
+        - 1
+    - 16
+    - - literal
+      - - 1
+        - 0.75
+    - 17
+    - - literal
+      - - 1
+        - 0.5

@@ -1,0 +1,253 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-place
+layout:
+  icon-image:
+    - match
+    - - get
+      - capital
+    - 'yes'
+    - city-11
+    - - match
+      - - coalesce
+        - - get
+          - place
+        - - get
+          - leasure
+        - - get
+          - sports
+        - - get
+          - amenity
+        - - get
+          - historic
+        - - get
+          - military
+        - - get
+          - office
+        - - get
+          - craft
+        - - get
+          - tourism
+        - - get
+          - shop
+      - - sports_centre
+        - tennis
+      - fitness-centre-11
+      - - public_building
+        - townhall
+      - college-11
+      - - college
+        - university
+      - college-11
+      - - restaurant
+        - fast_food
+        - cafe
+        - food_court
+      - restaurant-11
+      - - biergarten
+        - nightclub
+        - pub
+        - bar
+      - bar-11
+      - - community_centre
+        - government
+      - building-11
+      - - library
+        - arts_centre
+        - archaeological_site
+        - ruins
+        - museum
+      - building-11
+      - - money_transfer
+        - bureau_de_change
+        - bank
+        - atm
+      - bank-11
+      - - monument
+        - memorial
+        - grave_yard
+      - castle-11
+      - - castle
+        - fort
+      - castle-11
+      - - bed_and_breakfast
+        - hotel
+        - chalet
+      - lodging-11
+      - - car_repair
+        - supermarket
+        - kiosk
+        - department_store
+        - clothes
+        - books
+        - butcher
+        - beverages
+        - alcohol
+        - optician
+        - stationery
+        - mobile_phone
+        - greengrocer
+        - car
+        - furniture
+        - computer
+        - hairdresser
+        - travel_agency
+        - cinema
+        - theatre
+        - marketplace
+        - car_rental
+        - bakery
+      - commercial-11
+      - drinking-water-11
+      - water-11
+      - bus-11
+      - bus-11
+      - park-11
+      - park-11
+      - stadium-11
+      - stadium-11
+      - embassy-11
+      - embassy-11
+      - hospital-11
+      - hospital-11
+      - fuel-11
+      - fuel-11
+      - airport-11
+      - airport-11
+      - ferry-11
+      - ferry-11
+      - zoo-11
+      - zoo-11
+      - amusement-park-11
+      - amusement-park-11
+      - airfield-11
+      - airfield-11
+      - building-11
+      - building-11
+      - pharmacy-11
+      - pharmacy-11
+      - townhall-11
+      - townhall-11
+      - police-11
+      - police-11
+      - prison-11
+      - prison-11
+      - fire-station-11
+      - fire-station-11
+      - post-11
+      - post-11
+      - school-11
+      - school-11
+      - circle-11
+  icon-size:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - capital
+      - 'yes'
+      - 1
+      - - case
+        - - has
+          - place
+        - 0
+        - - any
+          - - has
+            - shop
+          - - has
+            - tourism
+          - - has
+            - craft
+          - - has
+            - amenity
+          - - has
+            - sports
+        - 0
+        - 1
+    - 17
+    - 1
+  text-anchor:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - capital
+      - 'yes'
+      - bottom-left
+      - center
+    - 17
+    - top
+  text-field:
+    - step
+    - - zoom
+    - - case
+      - - has
+        - place
+      - - get
+        - name
+      - ''
+    - 17
+    - - get
+      - name
+  text-font:
+    - Roboto Regular
+  text-offset:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - capital
+      - 'yes'
+      - - literal
+        - - 0.4
+          - 0
+      - - literal
+        - - 0
+          - 0
+    - 17
+    - - literal
+      - - 0
+        - 1
+  text-size:
+    - step
+    - - zoom
+    - - match
+      - - get
+        - capital
+      - 'yes'
+      - 20
+      - - match
+        - - get
+          - place
+        - city
+        - 18
+        - town
+        - 16
+        - - village
+          - hamlet
+          - isolated_dwelling
+          - locality
+        - 12
+        - 10
+    - 18
+    - 10
+paint:
+  text-color:
+    - rgb
+    - 0
+    - 0
+    - 0
+  text-halo-color:
+    - rgb
+    - 238
+    - 238
+    - 238
+  text-halo-width: 1
+source: v
+source-layer: place
+type: symbol

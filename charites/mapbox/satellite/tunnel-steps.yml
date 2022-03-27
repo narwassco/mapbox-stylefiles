@@ -1,0 +1,53 @@
+id: tunnel-steps
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., tunnels
+source: composite
+source-layer: road
+minzoom: 14
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - tunnel
+  - - '=='
+    - - get
+      - class
+    - steps
+  - - '=='
+    - - geometry-type
+    - LineString
+layout: {}
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 15
+    - 1
+    - 16
+    - 1.6
+    - 18
+    - 6
+  line-color: hsl(0, 0%, 10%)
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 1
+        - 0
+    - 15
+    - - literal
+      - - 1.75
+        - 1
+    - 16
+    - - literal
+      - - 1
+        - 0.75
+    - 17
+    - - literal
+      - - 0.3
+        - 0.3

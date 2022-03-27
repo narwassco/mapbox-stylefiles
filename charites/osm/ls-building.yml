@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - LineString
+    - MultiLineString
+  - true
+  - false
+id: ls-building
+paint:
+  line-color:
+    - rgb
+    - 183
+    - 174
+    - 174
+source: v
+source-layer: building
+type: line

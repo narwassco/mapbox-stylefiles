@@ -1,0 +1,58 @@
+id: road-path-bg
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., surface
+source: composite
+source-layer: road
+minzoom: 12
+filter:
+  - all
+  - - '=='
+    - - get
+      - class
+    - path
+  - - step
+    - - zoom
+    - - '!'
+      - - match
+        - - get
+          - type
+        - - steps
+          - sidewalk
+          - crossing
+        - true
+        - false
+    - 16
+    - - '!='
+      - - get
+        - type
+      - steps
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 15
+    - 2
+    - 18
+    - 7
+  line-color: hsl(230, 17%, 82%)

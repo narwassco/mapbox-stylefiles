@@ -1,0 +1,163 @@
+id: transit-label
+type: symbol
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, transit-labels
+source: composite
+source-layer: transit_stop_label
+minzoom: 12
+filter:
+  - step
+  - - zoom
+  - - all
+    - - match
+      - - get
+        - mode
+      - rail
+      - true
+      - metro_rail
+      - true
+      - false
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 15
+  - - all
+    - - match
+      - - get
+        - mode
+      - rail
+      - true
+      - metro_rail
+      - true
+      - ferry
+      - true
+      - light_rail
+      - true
+      - false
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 16
+  - - all
+    - - match
+      - - get
+        - mode
+      - bus
+      - false
+      - true
+    - - '!='
+      - - get
+        - stop_type
+      - entrance
+  - 17
+  - - '!='
+    - - get
+      - stop_type
+    - entrance
+  - 19
+  - true
+layout:
+  text-size: 12
+  icon-image:
+    - get
+    - network
+  text-font:
+    - DIN Pro Medium
+    - Arial Unicode MS Regular
+  text-justify:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - left
+    - center
+  text-offset:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - - literal
+      - - 1
+        - 0
+    - - literal
+      - - 0
+        - 0.8
+  text-anchor:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - left
+    - top
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 14
+    - - match
+      - - get
+        - mode
+      - - rail
+        - metro_rail
+      - - coalesce
+        - - get
+          - name_en
+        - - get
+          - name
+      - ''
+    - 16
+    - - match
+      - - get
+        - mode
+      - - bus
+        - bicycle
+      - ''
+      - - coalesce
+        - - get
+          - name_en
+        - - get
+          - name
+    - 18
+    - - coalesce
+      - - get
+        - name_en
+      - - get
+        - name
+  text-letter-spacing: 0.01
+  text-max-width:
+    - match
+    - - get
+      - stop_type
+    - entrance
+    - 15
+    - 9
+paint:
+  text-halo-color: hsl(35, 19%, 100%)
+  text-color:
+    - match
+    - - get
+      - network
+    - tokyo-metro
+    - hsl(180, 50%, 30%)
+    - mexico-city-metro
+    - hsl(25, 100%, 63%)
+    - - barcelona-metro
+      - delhi-metro
+      - hong-kong-mtr
+      - milan-metro
+      - osaka-subway
+    - hsl(0, 90%, 47%)
+    - - boston-t
+      - washington-metro
+    - hsl(230, 18%, 20%)
+    - - chongqing-rail-transit
+      - kiev-metro
+      - singapore-mrt
+      - taipei-metro
+    - hsl(140, 90%, 25%)
+    - hsl(230, 48%, 44%)
+  text-halo-blur: 0.5
+  text-halo-width: 0.5

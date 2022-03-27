@@ -1,0 +1,26 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: ne-pg-snow
+paint:
+  fill-color:
+    - rgb
+    - 255
+    - 255
+    - 255
+  fill-opacity:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 2
+    - 0.3
+    - 7
+    - 0
+source: ne
+source-layer: snow
+type: fill

@@ -1,0 +1,8 @@
+id: satellite
+type: raster
+metadata:
+  mapbox:featureComponent: satellite
+  mapbox:group: Satellite imagery, land
+source: mapbox://mapbox.satellite
+layout: {}
+paint: {}

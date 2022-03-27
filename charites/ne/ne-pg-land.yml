@@ -1,0 +1,26 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: ne-pg-land
+paint:
+  fill-color:
+    - rgb
+    - 212
+    - 225
+    - 188
+  fill-opacity:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 2
+    - 0.3
+    - 7
+    - 0
+source: ne
+source-layer: land
+type: fill

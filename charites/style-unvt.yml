@@ -1,0 +1,177 @@
+version: 8
+name: NARWASSCO Vector Tile
+center:
+  - 35.869092060810885
+  - -1.0857266150667897
+zoom: 13.39788632926911
+bearing: 0
+pitch: 0
+sources:
+  v:
+    attribution: >-
+      OpenStreetMap contributors, Powered by the United Nations Vector Tile
+      Toolkit 
+    maxzoom: 15
+    tiles:
+      - https://narwassco.github.io/naru/zxy/{z}/{x}/{y}.pbf
+    type: vector
+  ne:
+    attribution: >-
+      ©Natural Earth., <img
+      src='https://unopengis.github.io/watermark/watermark.png'>
+    maxzoom: 5
+    tiles:
+      - https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf
+    type: vector
+  assets:
+    attribution: ©NARWASSCO,Ltd., ©Mapbox
+    minzoom: 10
+    maxzoom: 16
+    tiles:
+      - https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt
+    type: vector
+  narok-dem:
+    type: raster-dem
+    tiles:
+      - https://narwassco.github.io/narok-terrain/tiles/{z}/{x}/{y}.png
+    tileSize: 512
+    minzoom: 5
+    maxzoom: 15
+sprite: https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite
+glyphs: https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf
+layers:
+  - !!inc/file osm/background.yml
+  - !!inc/file narok/hillshade.yml
+  - !!inc/file ne/ne-pg-ocean.yml
+  - !!inc/file ne/ne-ls-coastline.yml
+  - !!inc/file osm/ls-water.yml
+  - !!inc/file osm/pg-water.yml
+  - !!inc/file osm/pg-water-wetland.yml
+  - !!inc/file ne/ne-pg-land.yml
+  - !!inc/file ne/ne-pg-snow.yml
+  - !!inc/file osm/pg-structure.yml
+  - !!inc/file osm/pg-landuse.yml
+  - !!inc/file osm/pg-nature.yml
+  - !!inc/file osm/pg-boundary.yml
+  - !!inc/file osm/pg-place.yml
+  - !!inc/file osm/pg-other.yml
+  - !!inc/file osm/pg-railway.yml
+  - !!inc/file osm/pg-road.yml
+  - !!inc/file osm/pg-route.yml
+  - !!inc/file osm/ls-landuse.yml
+  - !!inc/file osm/ls-nature.yml
+  - !!inc/file ne/ne-ls-country.yml
+  - !!inc/file osm/ls-boundary-other.yml
+  - !!inc/file osm/ls-boundary-international-disputed.yml
+  - !!inc/file osm/ls-boundary-international.yml
+  - !!inc/file osm/ls-road-line-h.yml
+  - !!inc/file osm/ls-road-line-h-dash.yml
+  - !!inc/file osm/ls-road-case-underground.yml
+  - !!inc/file osm/ls-road-line-g-underground.yml
+  - !!inc/file osm/ls-road-line-f-underground.yml
+  - !!inc/file osm/ls-road-line-e-underground.yml
+  - !!inc/file osm/ls-road-line-d-underground.yml
+  - !!inc/file osm/ls-road-line-c-underground.yml
+  - !!inc/file osm/ls-road-line-b-underground.yml
+  - !!inc/file osm/ls-road-line-a-underground.yml
+  - !!inc/file osm/ls-road-case-g.yml
+  - !!inc/file osm/ls-road-case-f.yml
+  - !!inc/file osm/ls-road-case-e.yml
+  - !!inc/file osm/ls-road-case-d.yml
+  - !!inc/file osm/ls-road-case-c.yml
+  - !!inc/file osm/ls-road-case-b.yml
+  - !!inc/file osm/ls-road-case-a.yml
+  - !!inc/file osm/ls-road-line-g.yml
+  - !!inc/file osm/ls-road-line-f.yml
+  - !!inc/file osm/ls-road-line-e.yml
+  - !!inc/file osm/ls-road-line-d.yml
+  - !!inc/file osm/ls-road-line-c.yml
+  - !!inc/file osm/ls-road-line-b.yml
+  - !!inc/file osm/ls-road-line-a.yml
+  - !!inc/file osm/ls-road-case-1.yml
+  - !!inc/file osm/ls-road-line-g-1.yml
+  - !!inc/file osm/ls-road-line-f-1.yml
+  - !!inc/file osm/ls-road-line-e-1.yml
+  - !!inc/file osm/ls-road-line-d-1.yml
+  - !!inc/file osm/ls-road-line-c-1.yml
+  - !!inc/file osm/ls-road-line-b-1.yml
+  - !!inc/file osm/ls-road-line-a-1.yml
+  - !!inc/file osm/ls-road-case-2.yml
+  - !!inc/file osm/ls-road-line-g-2.yml
+  - !!inc/file osm/ls-road-line-f-2.yml
+  - !!inc/file osm/ls-road-line-e-2.yml
+  - !!inc/file osm/ls-road-line-d-2.yml
+  - !!inc/file osm/ls-road-line-c-2.yml
+  - !!inc/file osm/ls-road-line-b-2.yml
+  - !!inc/file osm/ls-road-line-a-2.yml
+  - !!inc/file osm/ls-road-case-3.yml
+  - !!inc/file osm/ls-road-line-g-3.yml
+  - !!inc/file osm/ls-road-line-f-3.yml
+  - !!inc/file osm/ls-road-line-e-3.yml
+  - !!inc/file osm/ls-road-line-d-3.yml
+  - !!inc/file osm/ls-road-line-c-3.yml
+  - !!inc/file osm/ls-road-line-b-333.yml
+  - !!inc/file osm/ls-road-line-a-3.yml
+  - !!inc/file osm/ls-road-case-4.yml
+  - !!inc/file osm/ls-road-line-g-4.yml
+  - !!inc/file osm/ls-road-line-f-4.yml
+  - !!inc/file osm/ls-road-line-e-4.yml
+  - !!inc/file osm/ls-road-line-d-4.yml
+  - !!inc/file osm/ls-road-line-c-4.yml
+  - !!inc/file osm/ls-road-line-b-4.yml
+  - !!inc/file osm/ls-road-line-a-4.yml
+  - !!inc/file osm/ls-road-case-5.yml
+  - !!inc/file osm/ls-road-line-g-5.yml
+  - !!inc/file osm/ls-road-line-f-5.yml
+  - !!inc/file osm/ls-road-line-e-5.yml
+  - !!inc/file osm/ls-road-line-d-5.yml
+  - !!inc/file osm/ls-road-line-c-5.yml
+  - !!inc/file osm/ls-road-line-b-5.yml
+  - !!inc/file osm/ls-road-line-a-5.yml
+  - !!inc/file osm/ls-railway-subway.yml
+  - !!inc/file osm/ls-railway-line.yml
+  - !!inc/file osm/ls-railway-dash.yml
+  - !!inc/file osm/ls-route.yml
+  - !!inc/file osm/ls-structure.yml
+  - !!inc/file osm/ls-structure-taxiway.yml
+  - !!inc/file osm/ls-structure-runway.yml
+  - !!inc/file osm/ls-building.yml
+  - !!inc/file osm/ls-place.yml
+  - !!inc/file osm/ls-other.yml
+  - !!inc/file osm/pg-building-shadow.yml
+  - !!inc/file osm/pg-building.yml
+  - !!inc/file osm/pg-building-train-station.yml
+  - !!inc/file osm/pg-building-outline.yml
+  - !!inc/file ne/ne-pt-country.yml
+  - !!inc/file ne/ne-pt-place.yml
+  - !!inc/file osm/pt-nature.yml
+  - !!inc/file osm/pt-water.yml
+  - !!inc/file osm/pt-boundary.yml
+  - !!inc/file osm/pt-road.yml
+  - !!inc/file osm/pt-railway.yml
+  - !!inc/file osm/pt-route.yml
+  - !!inc/file osm/pt-structure.yml
+  - !!inc/file osm/pt-building.yml
+  - !!inc/file osm/ls-road-symbol.yml
+  - !!inc/file osm/pt-place.yml
+  - !!inc/file osm/pt-other.yml
+  - !!inc/file narok/village.yml
+  - !!inc/file narok/dma.yml
+  - !!inc/file narok/parcels.yml
+  - !!inc/file narok/wtp.yml
+  - !!inc/file narok/intake.yml
+  - !!inc/file narok/pipeline.yml
+  - !!inc/file narok/tank.yml
+  - !!inc/file narok/valve.yml
+  - !!inc/file narok/firehydrant.yml
+  - !!inc/file narok/washout.yml
+  - !!inc/file narok/flow meter.yml
+  - !!inc/file narok/meter.yml
+  - !!inc/file narok/village_annotation.yml
+  - !!inc/file narok/dma-annotation.yml
+  - !!inc/file narok/parcels_annotation.yml
+  - !!inc/file narok/pipeline_annotation.yml
+  - !!inc/file narok/intake_annotation.yml
+  - !!inc/file narok/tank_annotation.yml
+  - !!inc/file narok/narwassco-annotation.yml
+  - !!inc/file narok/wtp_annotation.yml

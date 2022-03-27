@@ -1,0 +1,24 @@
+id: water-shadow
+type: fill
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, water
+source: composite
+source-layer: water
+layout: {}
+paint:
+  fill-color: hsl(215, 84%, 69%)
+  fill-translate:
+    - interpolate
+    - - exponential
+      - 1.2
+    - - zoom
+    - 7
+    - - literal
+      - - 0
+        - 0
+    - 16
+    - - literal
+      - - -1
+        - -1
+  fill-translate-anchor: viewport

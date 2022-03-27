@@ -1,0 +1,52 @@
+id: bridge-rail-tracks
+type: line
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, bridges
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - match
+    - - get
+      - class
+    - - major_rail
+      - minor_rail
+    - true
+    - false
+layout:
+  line-join: round
+paint:
+  line-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - hsl(50, 19%, 81%)
+    - 16
+    - hsl(230, 10%, 74%)
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 4
+    - 20
+    - 8
+  line-dasharray:
+    - 0.1
+    - 15
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13.75
+    - 0
+    - 14
+    - 1

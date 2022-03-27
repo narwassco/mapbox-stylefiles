@@ -1,0 +1,44 @@
+id: road-rail
+type: line
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, surface
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - major_rail
+      - minor_rail
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+layout:
+  line-join: round
+paint:
+  line-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - hsl(50, 19%, 81%)
+    - 16
+    - hsl(230, 10%, 74%)
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 0.5
+    - 20
+    - 1

@@ -1,0 +1,48 @@
+id: ferry
+type: line
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, ferries
+source: composite
+source-layer: road
+minzoom: 8
+filter:
+  - '=='
+  - - get
+    - type
+  - ferry
+layout:
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 15
+    - hsl(205, 73%, 63%)
+    - 17
+    - hsl(230, 73%, 63%)
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 0.5
+    - 20
+    - 1
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 1
+        - 0
+    - 13
+    - - literal
+      - - 12
+        - 4

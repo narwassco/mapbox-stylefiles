@@ -1,0 +1,60 @@
+id: road-street-low
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 11
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - street
+      - street_limited
+      - primary_link
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 14
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 12
+    - 0.5
+    - 14
+    - 2
+    - 18
+    - 18
+  line-color: hsl(0, 0%, 100%)
+  line-opacity:
+    - step
+    - - zoom
+    - 1
+    - 14
+    - 0

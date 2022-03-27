@@ -1,0 +1,26 @@
+id: national-park
+type: fill
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, land
+source: composite
+source-layer: landuse_overlay
+minzoom: 5
+filter:
+  - '=='
+  - - get
+    - class
+  - national_park
+layout: {}
+paint:
+  fill-color: hsl(99, 57%, 75%)
+  fill-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 5
+    - 0
+    - 6
+    - 0.5
+    - 10
+    - 0.5

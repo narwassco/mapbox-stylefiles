@@ -1,0 +1,29 @@
+id: golf-hole-label
+type: symbol
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., walking-cycling-labels
+source: composite
+source-layer: road
+minzoom: 16
+filter:
+  - '=='
+  - - get
+    - class
+  - golf
+layout:
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-font:
+    - DIN Pro Medium
+    - Arial Unicode MS Regular
+  text-size: 12
+paint:
+  text-halo-color: hsl(99, 62%, 100%)
+  text-halo-width: 0.5
+  text-halo-blur: 0.5
+  text-color: hsl(105, 30%, 32%)

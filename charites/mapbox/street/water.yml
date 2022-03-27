@@ -1,0 +1,10 @@
+id: water
+type: fill
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, water
+source: composite
+source-layer: water
+layout: {}
+paint:
+  fill-color: hsl(196, 80%, 70%)

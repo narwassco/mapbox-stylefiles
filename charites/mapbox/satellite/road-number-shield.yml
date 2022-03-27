@@ -1,0 +1,86 @@
+id: road-number-shield
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, road-labels
+source: composite
+source-layer: road
+minzoom: 6
+filter:
+  - all
+  - - has
+    - reflen
+  - - <=
+    - - get
+      - reflen
+    - 6
+  - - step
+    - - zoom
+    - - '=='
+      - - geometry-type
+      - Point
+    - 11
+    - - '>'
+      - - get
+        - len
+      - 5000
+    - 12
+    - - '>'
+      - - get
+        - len
+      - 2500
+    - 13
+    - - '>'
+      - - get
+        - len
+      - 1000
+    - 14
+    - true
+layout:
+  text-size: 9
+  icon-image:
+    - concat
+    - - get
+      - shield
+    - '-'
+    - - to-string
+      - - get
+        - reflen
+  icon-rotation-alignment: viewport
+  text-max-angle: 38
+  symbol-spacing:
+    - interpolate
+    - - linear
+    - - zoom
+    - 11
+    - 150
+    - 14
+    - 200
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+  symbol-placement:
+    - step
+    - - zoom
+    - point
+    - 11
+    - line
+  text-rotation-alignment: viewport
+  text-field:
+    - get
+    - ref
+  text-letter-spacing: 0.05
+paint:
+  text-color:
+    - match
+    - - get
+      - shield_text_color
+    - white
+    - hsl(0, 0%, 100%)
+    - yellow
+    - hsl(50, 100%, 70%)
+    - orange
+    - hsl(25, 100%, 75%)
+    - blue
+    - hsl(230, 57%, 44%)
+    - hsl(230, 18%, 13%)

@@ -1,0 +1,68 @@
+id: road-secondary-tertiary-case
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 8
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - secondary
+      - tertiary
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 14
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 10
+    - 0.75
+    - 18
+    - 2
+  line-color: hsla(0, 1%, 10%, 0.5)
+  line-gap-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 5
+    - 0.1
+    - 18
+    - 26
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 13
+    - 0.3
+    - 15
+    - 0

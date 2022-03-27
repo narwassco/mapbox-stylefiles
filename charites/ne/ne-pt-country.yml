@@ -1,0 +1,23 @@
+id: ne-pt-country
+layout:
+  text-field:
+    - get
+    - name
+  text-font:
+    - Roboto Regular
+  text-size: 13
+paint:
+  text-color:
+    - rgb
+    - 0
+    - 0
+    - 0
+  text-halo-color:
+    - rgb
+    - 238
+    - 238
+    - 238
+  text-halo-width: 1
+source: ne
+source-layer: country_annotation
+type: symbol

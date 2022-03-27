@@ -1,0 +1,49 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: pt-railway
+layout:
+  icon-image:
+    - match
+    - - get
+      - railway
+    - station
+    - rail-11
+    - halt
+    - rail-11
+    - tram_stop
+    - rail-11
+    - circle-11
+  text-anchor: top
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 15
+    - - get
+      - name
+  text-font:
+    - Roboto Regular
+  text-offset:
+    - 0
+    - 1
+  text-size: 12
+paint:
+  text-color:
+    - rgb
+    - 0
+    - 0
+    - 0
+  text-halo-color:
+    - rgb
+    - 238
+    - 238
+    - 238
+  text-halo-width: 1
+source: v
+source-layer: railway
+type: symbol

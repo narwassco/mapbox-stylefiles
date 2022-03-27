@@ -1,0 +1,96 @@
+id: state-label
+type: symbol
+metadata:
+  mapbox:featureComponent: place-labels
+  mapbox:group: Place labels, place-labels
+source: composite
+source-layer: place_label
+minzoom: 3
+maxzoom: 9
+filter:
+  - case
+  - - '=='
+    - - get
+      - disputed
+    - 'true'
+  - - all
+    - - match
+      - - get
+        - class
+      - - state
+        - disputed_state
+      - true
+      - false
+    - - match
+      - - get
+        - worldview
+      - - all
+        - US
+      - true
+      - false
+  - - '=='
+    - - get
+      - class
+    - state
+layout:
+  text-size:
+    - interpolate
+    - - cubic-bezier
+      - 0.85
+      - 0.7
+      - 0.65
+      - 1
+    - - zoom
+    - 4
+    - - step
+      - - get
+        - symbolrank
+      - 10
+      - 6
+      - 9.5
+      - 7
+      - 9
+    - 9
+    - - step
+      - - get
+        - symbolrank
+      - 24
+      - 6
+      - 18
+      - 7
+      - 14
+  text-transform: uppercase
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+  text-field:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - symbolrank
+      - - coalesce
+        - - get
+          - name_en
+        - - get
+          - name
+      - 5
+      - - coalesce
+        - - get
+          - abbr
+        - - get
+          - name_en
+        - - get
+          - name
+    - 5
+    - - coalesce
+      - - get
+        - name_en
+      - - get
+        - name
+  text-letter-spacing: 0.15
+  text-max-width: 6
+paint:
+  text-color: hsl(230, 29%, 0%)
+  text-halo-color: hsl(35, 19%, 100%)
+  text-halo-width: 1

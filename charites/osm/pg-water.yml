@@ -1,0 +1,22 @@
+filter:
+  - match
+  - - get
+    - natural
+  - wetland
+  - false
+  - - match
+    - - geometry-type
+    - - Polygon
+      - MultiPolygon
+    - true
+    - false
+id: pg-water
+paint:
+  fill-color:
+    - rgb
+    - 187
+    - 222
+    - 251
+source: v
+source-layer: water
+type: fill

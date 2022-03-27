@@ -1,0 +1,59 @@
+id: admin-0-boundary-disputed
+type: line
+metadata:
+  mapbox:featureComponent: admin-boundaries
+  mapbox:group: Administrative boundaries, admin
+source: composite
+source-layer: admin
+minzoom: 1
+filter:
+  - all
+  - - '=='
+    - - get
+      - disputed
+    - 'true'
+  - - '=='
+    - - get
+      - admin_level
+    - 0
+  - - '=='
+    - - get
+      - maritime
+    - 'false'
+  - - match
+    - - get
+      - worldview
+    - - all
+      - US
+    - true
+    - false
+layout:
+  line-join: round
+paint:
+  line-color: hsl(0, 0%, 0%)
+  line-width:
+    - interpolate
+    - - linear
+    - - zoom
+    - 3
+    - 0.75
+    - 10
+    - 3
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 3.25
+        - 3.25
+    - 6
+    - - literal
+      - - 2.5
+        - 2.5
+    - 7
+    - - literal
+      - - 2
+        - 2.25
+    - 8
+    - - literal
+      - - 1.75
+        - 2

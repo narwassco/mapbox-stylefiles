@@ -1,0 +1,14 @@
+id: dma
+type: line
+source: assets
+source-layer: dma
+minzoom: 13
+maxzoom: 17
+layout: {}
+paint:
+  line-color: hsl(33, 100%, 50%)
+  line-width: 1.5
+  line-dasharray:
+    - 1
+    - 1
+  line-gap-width: 0.5

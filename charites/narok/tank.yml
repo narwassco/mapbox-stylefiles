@@ -1,0 +1,9 @@
+id: tank
+type: fill
+source: assets
+source-layer: tank
+minzoom: 13
+layout: {}
+paint:
+  fill-color: hsl(75, 99%, 91%)
+  fill-outline-color: hsl(0, 99%, 0%)

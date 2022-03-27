@@ -1,0 +1,86 @@
+id: settlement-subdivision-label
+type: symbol
+metadata:
+  mapbox:featureComponent: place-labels
+  mapbox:group: Place labels, place-labels
+source: composite
+source-layer: place_label
+minzoom: 10
+maxzoom: 15
+filter:
+  - all
+  - - case
+    - - '=='
+      - - get
+        - disputed
+      - 'true'
+    - - all
+      - - match
+        - - get
+          - class
+        - - settlement_subdivision
+          - disputed_settlement_subdivision
+        - true
+        - false
+      - - match
+        - - get
+          - worldview
+        - - all
+          - US
+        - true
+        - false
+    - - '=='
+      - - get
+        - class
+      - settlement_subdivision
+  - - <=
+    - - get
+      - filterrank
+    - 4
+layout:
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-transform: uppercase
+  text-font:
+    - DIN Pro Regular
+    - Arial Unicode MS Regular
+  text-letter-spacing:
+    - match
+    - - get
+      - type
+    - suburb
+    - 0.15
+    - 0.1
+  text-max-width: 7
+  text-padding: 3
+  text-size:
+    - interpolate
+    - - cubic-bezier
+      - 0.5
+      - 0
+      - 1
+      - 1
+    - - zoom
+    - 11
+    - - match
+      - - get
+        - type
+      - suburb
+      - 11
+      - 10.5
+    - 15
+    - - match
+      - - get
+        - type
+      - suburb
+      - 17
+      - 16
+paint:
+  text-halo-color: hsla(35, 19%, 100%, 0.75)
+  text-halo-width: 1
+  text-color: hsl(230, 29%, 36%)
+  text-halo-blur: 0.5

@@ -1,0 +1,38 @@
+filter:
+  - match
+  - - geometry-type
+  - - LineString
+    - MultiLineString
+  - true
+  - false
+id: ls-road-symbol
+layout:
+  symbol-placement: line
+  text-field: '{name}'
+  text-font:
+    - Roboto Regular
+  text-offset:
+    - step
+    - - zoom
+    - - literal
+      - - 0
+        - -0.5
+    - 16
+    - - literal
+      - - 0
+        - -1
+    - 17
+    - - literal
+      - - 0
+        - 0
+  text-optional: true
+  text-size: 8
+paint:
+  text-color:
+    - rgb
+    - 97
+    - 97
+    - 97
+source: v
+source-layer: road
+type: symbol

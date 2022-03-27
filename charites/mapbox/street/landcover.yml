@@ -1,0 +1,27 @@
+id: landcover
+type: fill
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, land
+source: composite
+source-layer: landcover
+maxzoom: 7
+layout: {}
+paint:
+  fill-color:
+    - match
+    - - get
+      - class
+    - snow
+    - hsl(35, 14%, 100%)
+    - hsl(81, 38%, 81%)
+  fill-opacity:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 2
+    - 0.3
+    - 7
+    - 0
+  fill-antialias: false

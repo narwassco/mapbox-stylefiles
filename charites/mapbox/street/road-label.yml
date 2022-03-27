@@ -1,0 +1,115 @@
+id: road-label
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, road-labels
+source: composite
+source-layer: road
+minzoom: 10
+filter:
+  - step
+  - - zoom
+  - - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+      - primary
+      - secondary
+      - tertiary
+    - true
+    - false
+  - 12
+  - - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+      - primary
+      - secondary
+      - tertiary
+      - street
+      - street_limited
+    - true
+    - false
+  - 15
+  - - match
+    - - get
+      - class
+    - - path
+      - pedestrian
+      - golf
+      - ferry
+      - aerialway
+    - false
+    - true
+layout:
+  text-size:
+    - interpolate
+    - - linear
+    - - zoom
+    - 10
+    - - match
+      - - get
+        - class
+      - - motorway
+        - trunk
+        - primary
+        - secondary
+        - tertiary
+      - 10
+      - - motorway_link
+        - trunk_link
+        - primary_link
+        - secondary_link
+        - tertiary_link
+        - street
+        - street_limited
+      - 9
+      - 6.5
+    - 18
+    - - match
+      - - get
+        - class
+      - - motorway
+        - trunk
+        - primary
+        - secondary
+        - tertiary
+      - 16
+      - - motorway_link
+        - trunk_link
+        - primary_link
+        - secondary_link
+        - tertiary_link
+        - street
+        - street_limited
+      - 14
+      - 13
+  text-max-angle: 30
+  text-font:
+    - DIN Pro Regular
+    - Arial Unicode MS Regular
+  symbol-placement: line
+  text-padding: 1
+  text-rotation-alignment: map
+  text-pitch-alignment: viewport
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-letter-spacing: 0.01
+paint:
+  text-color: hsl(0,0%, 0%)
+  text-halo-color:
+    - match
+    - - get
+      - class
+    - - motorway
+      - trunk
+    - hsla(35, 19%, 100%, 0.75)
+    - hsl(35, 19%, 100%)
+  text-halo-width: 1
+  text-halo-blur: 1

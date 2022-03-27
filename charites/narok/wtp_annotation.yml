@@ -1,0 +1,32 @@
+id: wtp_annotation
+type: symbol
+source: assets
+source-layer: point_annotation
+minzoom: 10
+filter:
+  - match
+  - - get
+    - layer
+  - - wtp
+  - true
+  - false
+layout:
+  text-field:
+    - step
+    - - zoom
+    - - get
+      - name
+    - 22
+    - - get
+      - name
+  text-font:
+    - Roboto Regular
+  text-size: 12
+  text-max-width: 7
+  icon-image: rectangle-yellow-6
+  icon-text-fit: both
+  icon-size: 1.2
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1
+  text-color: hsl(5, 86%, 49%)

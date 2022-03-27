@@ -1,0 +1,64 @@
+id: admin-1-boundary
+type: line
+metadata:
+  mapbox:featureComponent: admin-boundaries
+  mapbox:group: Administrative boundaries, admin
+source: composite
+source-layer: admin
+filter:
+  - all
+  - - '=='
+    - - get
+      - admin_level
+    - 1
+  - - '=='
+    - - get
+      - maritime
+    - 'false'
+  - - match
+    - - get
+      - worldview
+    - - all
+      - US
+    - true
+    - false
+layout:
+  line-join: round
+  line-cap: round
+paint:
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 2
+        - 0
+    - 7
+    - - literal
+      - - 2
+        - 2
+        - 6
+        - 2
+  line-width:
+    - interpolate
+    - - linear
+    - - zoom
+    - 7
+    - 0.75
+    - 12
+    - 1.5
+  line-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 2
+    - 0
+    - 3
+    - 1
+  line-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 3
+    - hsl(230, 15%, 77%)
+    - 7
+    - hsl(230, 8%, 62%)

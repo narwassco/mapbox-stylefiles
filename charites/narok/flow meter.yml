@@ -1,0 +1,33 @@
+id: flow meter
+type: symbol
+source: assets
+source-layer: flowmeter
+minzoom: 14
+filter:
+  - match
+  - - get
+    - metertype
+  - - ''
+    - Customer Meter
+  - false
+  - true
+layout:
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 14
+    - - get
+      - metertype
+  text-size: 12
+  text-font:
+    - Roboto Regular
+  text-offset:
+    - 0
+    - 1
+  icon-image: meter
+  text-justify: left
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1
+  text-color: hsl(0, 0%, 0%)

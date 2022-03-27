@@ -1,0 +1,141 @@
+id: natural-point-label
+type: symbol
+metadata:
+  mapbox:featureComponent: natural-features
+  mapbox:group: Natural features, natural-labels
+source: composite
+source-layer: natural_label
+minzoom: 4
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - dock
+      - glacier
+      - landform
+      - water_feature
+      - wetland
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - Point
+  - - <=
+    - - get
+      - filterrank
+    - 2
+layout:
+  text-size:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 5
+      - 12
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 13
+      - 12
+  icon-image:
+    - step
+    - - zoom
+    - - concat
+      - - get
+        - maki
+      - '-11'
+    - 15
+    - - concat
+      - - get
+        - maki
+      - '-15'
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+  text-offset:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - - literal
+        - - 0
+          - 0
+      - 5
+      - - literal
+        - - 0
+          - 0.75
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - - literal
+        - - 0
+          - 0
+      - 13
+      - - literal
+        - - 0
+          - 0.75
+  text-anchor:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - center
+      - 5
+      - top
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - center
+      - 13
+      - top
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+paint:
+  icon-opacity:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - 0
+      - 5
+      - 1
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - 0
+      - 13
+      - 1
+  text-halo-color: hsl(0, 5%, 0%)
+  text-halo-width: 0.5
+  text-halo-blur: 0.5
+  text-color:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - hsl(0, 0%, 100%)
+      - 5
+      - hsl(0, 0%, 100%)
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - hsl(0, 0%, 100%)
+      - 13
+      - hsl(0, 0%, 100%)

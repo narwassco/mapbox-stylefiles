@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-other
+paint:
+  fill-color:
+    - rgb
+    - 209
+    - 196
+    - 233
+source: v
+source-layer: other
+type: fill

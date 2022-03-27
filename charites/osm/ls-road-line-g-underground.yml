@@ -1,0 +1,40 @@
+filter:
+  - match
+  - - get
+    - highway
+  - - residential
+    - track
+    - unclassified
+  - - match
+    - - get
+      - layer
+    - - '-1'
+      - '-2'
+      - '-3'
+      - '-4'
+      - '-5'
+    - true
+    - false
+  - false
+id: ls-road-line-g-underground
+layout:
+  line-cap: round
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 245
+    - 245
+    - 245
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 216
+source: v
+source-layer: road
+type: line

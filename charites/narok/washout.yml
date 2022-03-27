@@ -1,0 +1,24 @@
+id: washout
+type: symbol
+source: assets
+source-layer: washout
+minzoom: 15
+layout:
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 16
+    - - to-string
+      - - get
+        - size
+  text-font:
+    - Roboto Regular
+  text-size: 12
+  text-offset:
+    - 0
+    - 1
+  icon-image: washout
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1

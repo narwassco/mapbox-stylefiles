@@ -1,0 +1,16 @@
+id: pitch-outline
+type: line
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, land
+source: composite
+source-layer: landuse
+minzoom: 15
+filter:
+  - '=='
+  - - get
+    - class
+  - pitch
+layout: {}
+paint:
+  line-color: hsl(81, 33%, 84%)

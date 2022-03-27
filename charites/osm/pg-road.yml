@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-road
+paint:
+  fill-color:
+    - rgb
+    - 178
+    - 223
+    - 219
+source: v
+source-layer: road
+type: fill

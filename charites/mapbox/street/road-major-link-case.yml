@@ -1,0 +1,68 @@
+id: road-major-link-case
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 10
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - motorway_link
+      - trunk_link
+    - true
+    - false
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 14
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 12
+    - 0.75
+    - 20
+    - 2
+  line-color: hsl(230, 26%, 100%)
+  line-gap-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 12
+    - 0.5
+    - 14
+    - 2
+    - 18
+    - 18
+  line-opacity:
+    - step
+    - - zoom
+    - 0
+    - 11
+    - 1

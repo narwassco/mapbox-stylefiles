@@ -1,0 +1,17 @@
+id: level-crossing
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface-icons
+source: composite
+source-layer: road
+minzoom: 16
+filter:
+  - '=='
+  - - get
+    - class
+  - level_crossing
+layout:
+  icon-image: level-crossing
+  icon-allow-overlap: true
+paint: {}

@@ -1,0 +1,39 @@
+filer:
+  - match
+  - - get
+    - highway
+  - - primary
+    - trunk_link
+  - - match
+    - - get
+      - layer
+    - - '-1'
+      - '-2'
+      - '-3'
+      - '-4'
+      - '-5'
+    - true
+    - false
+  - false
+id: ls-road-line-c-underground
+layout:
+  line-cap: round
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 245
+    - 245
+    - 245
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 312
+source: v
+source-layer: road
+type: line

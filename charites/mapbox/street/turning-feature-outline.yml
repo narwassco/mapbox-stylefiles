@@ -1,0 +1,38 @@
+id: turning-feature-outline
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, surface
+source: composite
+source-layer: road
+minzoom: 15
+filter:
+  - all
+  - - '=='
+    - - geometry-type
+    - Point
+  - - match
+    - - get
+      - class
+    - - turning_circle
+      - turning_loop
+    - true
+    - false
+layout:
+  icon-image: turning-circle-outline
+  icon-size:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 0.122
+    - 18
+    - 0.969
+    - 20
+    - 1
+  icon-allow-overlap: true
+  icon-ignore-placement: true
+  icon-padding: 0
+  icon-rotation-alignment: map
+paint: {}

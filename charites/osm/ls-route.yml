@@ -1,0 +1,21 @@
+filter:
+  - match
+  - - geometry-type
+  - - LineString
+    - MultiLineString
+  - true
+  - false
+id: ls-route
+paint:
+  line-color:
+    - rgb
+    - 61
+    - 156
+    - 204
+  line-dasharray:
+    - 6
+    - 6
+  line-width: 1
+source: v
+source-layer: route
+type: line

@@ -1,0 +1,73 @@
+id: natural-line-label
+type: symbol
+metadata:
+  mapbox:featureComponent: natural-features
+  mapbox:group: Natural features, natural-labels
+source: composite
+source-layer: natural_label
+minzoom: 4
+filter:
+  - all
+  - - match
+    - - get
+      - class
+    - - glacier
+      - landform
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+  - - <=
+    - - get
+      - filterrank
+    - 2
+layout:
+  text-size:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 5
+      - 12
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - 18
+      - 13
+      - 12
+  text-max-angle: 30
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+  symbol-placement: line-center
+  text-pitch-alignment: viewport
+paint:
+  text-halo-width: 0.5
+  text-halo-color: hsl(0, 5%, 0%)
+  text-halo-blur: 0.5
+  text-color:
+    - step
+    - - zoom
+    - - step
+      - - get
+        - sizerank
+      - hsl(0, 0%, 100%)
+      - 5
+      - hsl(0, 0%, 100%)
+    - 17
+    - - step
+      - - get
+        - sizerank
+      - hsl(0, 0%, 100%)
+      - 13
+      - hsl(0, 0%, 100%)

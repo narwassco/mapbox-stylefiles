@@ -1,0 +1,35 @@
+id: hillshade
+type: fill
+metadata:
+  mapbox:featureComponent: terrain
+  mapbox:group: Terrain, land
+source: composite
+source-layer: hillshade
+maxzoom: 16
+layout: {}
+paint:
+  fill-color:
+    - match
+    - - get
+      - class
+    - shadow
+    - hsl(56, 36%, 21%)
+    - hsl(35, 14%, 100%)
+  fill-opacity:
+    - interpolate
+    - - linear
+    - - zoom
+    - 14
+    - - match
+      - - get
+        - level
+      - - 67
+        - 56
+      - 0.06
+      - - 89
+        - 78
+      - 0.05
+      - 0.12
+    - 16
+    - 0
+  fill-antialias: false

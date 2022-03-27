@@ -1,0 +1,48 @@
+id: meter
+type: symbol
+source: assets
+source-layer: meter
+minzoom: 16
+filter:
+  - match
+  - - get
+    - metertype
+  - - ''
+    - Customer Meter
+  - true
+  - false
+layout:
+  text-size: 12
+  text-font:
+    - Roboto Regular
+  text-offset:
+    - 0
+    - 1
+  icon-image:
+    - match
+    - - get
+      - status
+    - - 'ON'
+    - meter_on
+    - - AVG
+    - meter_avg
+    - - CO
+    - meter_co
+    - meter
+  icon-size: 0.7
+  text-justify: left
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 17
+    - - concat
+      - - to-string
+        - - get
+          - connno
+      - - get
+        - zonecd
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1
+  text-color: hsl(0, 0%, 0%)

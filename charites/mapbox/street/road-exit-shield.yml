@@ -1,0 +1,35 @@
+id: road-exit-shield
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, road-labels
+source: composite
+source-layer: motorway_junction
+minzoom: 14
+filter:
+  - all
+  - - has
+    - reflen
+  - - <=
+    - - get
+      - reflen
+    - 9
+layout:
+  text-field:
+    - get
+    - ref
+  text-size: 9
+  icon-image:
+    - concat
+    - motorway-exit-
+    - - to-string
+      - - get
+        - reflen
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+paint:
+  text-color: hsl(0, 0%, 100%)
+  text-translate:
+    - 0
+    - 0

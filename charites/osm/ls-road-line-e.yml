@@ -1,0 +1,34 @@
+filter:
+  - match
+  - - get
+    - highway
+  - - tertiary
+    - secondary_link
+  - - case
+    - - has
+      - layer
+    - false
+    - true
+  - false
+id: ls-road-line-e
+layout:
+  line-cap: round
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 223
+    - 208
+    - 214
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 288
+source: v
+source-layer: road
+type: line

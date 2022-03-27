@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: ne-pg-ocean
+paint:
+  fill-color:
+    - rgb
+    - 117
+    - 207
+    - 240
+source: ne
+source-layer: ocean
+type: fill

@@ -1,0 +1,44 @@
+id: road-intersection
+type: symbol
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, road-labels
+source: composite
+source-layer: road
+minzoom: 15
+filter:
+  - all
+  - - '=='
+    - - get
+      - class
+    - intersection
+  - - has
+    - name
+layout:
+  text-field:
+    - coalesce
+    - - get
+      - name_en
+    - - get
+      - name
+  icon-image: intersection
+  icon-text-fit: both
+  icon-text-fit-padding:
+    - 1
+    - 2
+    - 1
+    - 2
+  text-size:
+    - interpolate
+    - - exponential
+      - 1.2
+    - - zoom
+    - 15
+    - 9
+    - 18
+    - 12
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+paint:
+  text-color: hsl(230, 57%, 64%)

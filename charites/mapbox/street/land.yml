@@ -1,0 +1,15 @@
+id: land
+type: background
+metadata:
+  mapbox:featureComponent: land-and-water
+  mapbox:group: Land & water, land
+layout: {}
+paint:
+  background-color:
+    - interpolate
+    - - linear
+    - - zoom
+    - 11
+    - hsl(35, 32%, 91%)
+    - 13
+    - hsl(35, 12%, 89%)

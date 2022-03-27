@@ -1,0 +1,42 @@
+id: road-pedestrian-case
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., surface
+source: composite
+source-layer: road
+minzoom: 14
+filter:
+  - all
+  - - '=='
+    - - get
+      - class
+    - pedestrian
+  - - match
+    - - get
+      - structure
+    - - none
+      - ford
+    - true
+    - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 2
+    - 18
+    - 14.5
+  line-color: hsl(230, 26%, 88%)

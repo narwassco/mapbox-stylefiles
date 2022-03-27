@@ -1,0 +1,47 @@
+filter:
+  - match
+  - - get
+    - building
+  - - train_station
+    - roof
+  - false
+  - - match
+    - - geometry-type
+    - - Polygon
+      - MultiPolygon
+    - true
+    - false
+id: pg-building
+paint:
+  fill-extrusion-color:
+    - match
+    - - get
+      - layer
+    - - '-1'
+      - '-2'
+      - '-3'
+      - '-4'
+      - '-5'
+    - - rgb
+      - 184
+      - 163
+      - 165
+    - - rgb
+      - 222
+      - 215
+      - 215
+  fill-extrusion-height:
+    - max
+    - - to-number
+      - - get
+        - height
+    - - '*'
+      - - to-number
+        - - get
+          - building:levels
+      - 3.66
+    - 5
+  fill-extrusion-opacity: 0.7
+source: v
+source-layer: building
+type: fill-extrusion

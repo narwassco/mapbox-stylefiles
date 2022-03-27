@@ -1,0 +1,35 @@
+filter:
+  - match
+  - - get
+    - layer
+  - '2'
+  - - match
+    - - get
+      - highway
+    - - road
+      - tertiary_link
+    - true
+    - false
+  - false
+id: ls-road-line-f-2
+layout:
+  line-cap: butt
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 255
+    - 255
+    - 255
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 240
+source: v
+source-layer: road
+type: line

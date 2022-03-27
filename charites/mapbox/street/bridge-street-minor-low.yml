@@ -1,0 +1,89 @@
+id: bridge-street-minor-low
+type: line
+metadata:
+  mapbox:featureComponent: road-network
+  mapbox:group: Road network, bridges
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - step
+    - - zoom
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+        - track
+      - true
+      - false
+    - 14
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - track
+        - primary_link
+        - secondary_link
+        - tertiary_link
+        - service
+      - true
+      - false
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-cap:
+    - step
+    - - zoom
+    - butt
+    - 14
+    - round
+  line-join:
+    - step
+    - - zoom
+    - miter
+    - 14
+    - round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 12
+    - 0.5
+    - 14
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+      - 2
+      - track
+      - 1
+      - 0.5
+    - 18
+    - - match
+      - - get
+        - class
+      - - street
+        - street_limited
+        - primary_link
+      - 18
+      - 12
+  line-color: hsl(0, 0%, 100%)
+  line-opacity:
+    - step
+    - - zoom
+    - 1
+    - 14
+    - 0

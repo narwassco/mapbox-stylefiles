@@ -1,0 +1,48 @@
+id: bridge-pedestrian
+type: line
+metadata:
+  mapbox:featureComponent: walking-cycling
+  mapbox:group: Walking, cycling, etc., barriers-bridges
+source: composite
+source-layer: road
+minzoom: 13
+filter:
+  - all
+  - - '=='
+    - - get
+      - structure
+    - bridge
+  - - '=='
+    - - get
+      - class
+    - pedestrian
+  - - '=='
+    - - geometry-type
+    - LineString
+layout:
+  line-join: round
+paint:
+  line-width:
+    - interpolate
+    - - exponential
+      - 1.5
+    - - zoom
+    - 14
+    - 0.5
+    - 18
+    - 12
+  line-color: hsl(0, 0%, 22%)
+  line-dasharray:
+    - step
+    - - zoom
+    - - literal
+      - - 1
+        - 0
+    - 15
+    - - literal
+      - - 1.5
+        - 0.4
+    - 16
+    - - literal
+      - - 1
+        - 0.2

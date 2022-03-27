@@ -1,0 +1,56 @@
+id: airport-label
+type: symbol
+metadata:
+  mapbox:featureComponent: transit
+  mapbox:group: Transit, transit-labels
+source: composite
+source-layer: airport_label
+minzoom: 8
+layout:
+  text-line-height: 1.1
+  text-size:
+    - step
+    - - get
+      - sizerank
+    - 18
+    - 9
+    - 12
+  icon-image:
+    - step
+    - - get
+      - sizerank
+    - - concat
+      - - get
+        - maki
+      - '-15'
+    - 9
+    - - concat
+      - - get
+        - maki
+      - '-11'
+  text-font:
+    - DIN Pro Bold
+    - Arial Unicode MS Bold
+  text-offset:
+    - 0
+    - 0.75
+  text-rotation-alignment: viewport
+  text-anchor: top
+  text-field:
+    - step
+    - - get
+      - sizerank
+    - - coalesce
+      - - get
+        - name_en
+      - - get
+        - name
+    - 15
+    - - get
+      - ref
+  text-letter-spacing: 0.01
+  text-max-width: 9
+paint:
+  text-color: hsl(0, 0%, 100%)
+  text-halo-color: hsl(0, 20%, 3%)
+  text-halo-width: 1

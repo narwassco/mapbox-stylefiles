@@ -1,0 +1,14 @@
+id: pg-building-shadow
+minzoom: 16
+paint:
+  fill-color:
+    - rgb
+    - 131
+    - 124
+    - 124
+  fill-translate:
+    - 2
+    - 2
+source: open-buildings
+source-layer: open-buildings
+type: fill

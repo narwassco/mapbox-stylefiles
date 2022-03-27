@@ -1,0 +1,12 @@
+id: village
+type: line
+source: assets
+source-layer: village
+minzoom: 10
+maxzoom: 17
+paint:
+  line-width: 1.8
+  line-color: hsl(118, 36%, 44%)
+  line-dasharray:
+    - 3
+    - 1.5

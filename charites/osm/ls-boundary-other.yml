@@ -1,0 +1,27 @@
+filter:
+  - match
+  - - get
+    - admin_level
+  - 2
+  - false
+  - - match
+    - - geometry-type
+    - - LineString
+      - MultiLineString
+    - true
+    - false
+id: ls-boundary-other
+paint:
+  line-color:
+    - rgb
+    - 92
+    - 99
+    - 102
+  line-dasharray:
+    - 4
+    - 1
+    - 1
+    - 1
+source: v
+source-layer: boundary
+type: line

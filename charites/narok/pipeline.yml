@@ -1,0 +1,32 @@
+id: pipeline
+type: line
+source: assets
+source-layer: pipeline
+minzoom: 10
+layout: {}
+paint:
+  line-color: hsl(240, 100%, 50%)
+  line-width:
+    - match
+    - - get
+      - pipesize
+    - - DN300
+    - 3
+    - - DN250
+    - 2.5
+    - - DN200
+    - 2.3
+    - - DN150
+    - 2
+    - - DN110
+      - DN100
+    - 1.7
+    - - DN90
+    - 1.5
+    - - DN63
+      - DN50
+      - DN75
+    - 1.3
+    - - DN13
+    - 0.8
+    - 1

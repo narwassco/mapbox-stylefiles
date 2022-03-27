@@ -1,0 +1,35 @@
+filter:
+  - match
+  - - get
+    - layer
+  - '2'
+  - - match
+    - - get
+      - highway
+    - - trunk
+      - motorway_link
+    - true
+    - false
+  - false
+id: ls-road-line-b-2
+layout:
+  line-cap: butt
+  line-join: round
+paint:
+  line-color:
+    - rgb
+    - 204
+    - 122
+    - 155
+  line-width:
+    - interpolate
+    - - exponential
+      - 2
+    - - zoom
+    - 6
+    - 1
+    - 22
+    - 312
+source: v
+source-layer: road
+type: line

@@ -1,0 +1,17 @@
+filter:
+  - match
+  - - geometry-type
+  - - Polygon
+    - MultiPolygon
+  - true
+  - false
+id: pg-route
+paint:
+  fill-color:
+    - rgb
+    - 248
+    - 187
+    - 208
+source: v
+source-layer: route
+type: fill

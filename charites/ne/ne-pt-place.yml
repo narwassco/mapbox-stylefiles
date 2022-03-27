@@ -1,0 +1,52 @@
+filter:
+  - match
+  - - geometry-type
+  - - Point
+    - MultiPoint
+  - true
+  - false
+id: ne-pt-place
+layout:
+  icon-image:
+    - match
+    - - get
+      - place
+    - airports
+    - airport-11
+    - ports
+    - ferry-11
+    - mountains
+    - mountain-11
+    - city
+    - city-11
+    - circle-11
+  icon-size: 1
+  text-field:
+    - get
+    - name
+  text-font:
+    - Roboto Regular
+  text-justify: auto
+  text-radial-offset: 1
+  text-size: 10
+  text-variable-anchor:
+    - top
+    - bottom
+    - left
+    - right
+maxzoom: 6
+paint:
+  text-color:
+    - rgb
+    - 0
+    - 0
+    - 0
+  text-halo-color:
+    - rgb
+    - 238
+    - 238
+    - 238
+  text-halo-width: 1
+source: ne
+source-layer: place
+type: symbol
