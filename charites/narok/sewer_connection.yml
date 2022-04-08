@@ -1,0 +1,49 @@
+id: sewer_connection
+type: symbol
+source: assets
+source-layer: sewer_connection
+minzoom: 16
+filter:
+  - match
+  - - get
+    - type
+  - - Public Toilet
+    - Commercial
+    - Institution
+  - false
+  - true
+layout:
+  icon-image:
+    - match
+    - - get
+      - status
+    - - Fully functional
+    - household_functional
+    - - Partially functional
+    - household_partially
+    - - Non functional
+    - household_abandoned
+    - household
+  icon-size: 0.8
+  text-size: 12
+  text-font:
+    - Roboto Regular
+  text-offset:
+    - 0
+    - 1
+  text-justify: left
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 17
+    - - concat
+      - - to-string
+        - - get
+          - water_connection_no
+      - - get
+        - water_zone
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1
+  text-color: hsl(0, 0%, 0%)

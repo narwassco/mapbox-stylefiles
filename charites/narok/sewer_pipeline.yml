@@ -1,0 +1,19 @@
+id: sewer_pipeline
+type: line
+source: assets
+source-layer: sewer_pipeline
+minzoom: 10
+layout: {}
+paint:
+  line-color: rgba(255, 113, 27, 1)
+  line-width:
+    - match
+    - - get
+      - type
+    - - Main Trunk Sewer
+    - 3
+    - - Sub Trunk Sewer
+    - 2.5
+    - - Secondary Trunk Sewer
+    - 2
+    - 1

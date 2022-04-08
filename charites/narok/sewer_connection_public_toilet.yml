@@ -1,0 +1,15 @@
+id: sewer_public_toilet
+type: symbol
+source: assets
+source-layer: sewer_connection
+minzoom: 16
+filter:
+  - match
+  - - get
+    - type
+  - - Public Toilet
+  - true
+  - false
+layout:
+  icon-image: public_toilet
+paint: {}
