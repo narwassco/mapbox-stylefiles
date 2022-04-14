@@ -1,0 +1,8 @@
+id: manhole
+type: symbol
+source: assets
+source-layer: manhole
+minzoom: 14
+layout:
+  icon-image: manhole
+  icon-size: 0.8

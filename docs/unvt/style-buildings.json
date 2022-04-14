@@ -6736,7 +6736,7 @@
             "capital"
           ],
           "yes",
-          "city-11",
+          "city",
           [
             "match",
             [
@@ -6786,68 +6786,71 @@
               "sports_centre",
               "tennis"
             ],
-            "fitness-centre-11",
+            "fitness-centre",
             [
               "public_building",
               "townhall"
             ],
-            "college-11",
+            "college",
             [
               "college",
               "university"
             ],
-            "college-11",
+            "college",
             [
               "restaurant",
               "fast_food",
               "cafe",
               "food_court"
             ],
-            "restaurant-11",
+            "restaurant",
             [
               "biergarten",
               "nightclub",
               "pub",
               "bar"
             ],
-            "bar-11",
+            "bar",
             [
               "community_centre",
               "government"
             ],
-            "building-11",
+            "building",
             [
-              "library",
+              "library"
+            ],
+            "library",
+            [
               "arts_centre",
               "archaeological_site",
               "ruins",
               "museum"
             ],
-            "building-11",
+            "museum",
             [
               "money_transfer",
               "bureau_de_change",
               "bank",
               "atm"
             ],
-            "bank-11",
+            "bank",
             [
               "monument",
               "memorial",
               "grave_yard"
             ],
-            "castle-11",
+            "monument",
             [
               "castle",
               "fort"
             ],
-            "castle-11",
+            "castle",
             [
               "bed_and_breakfast",
               "hotel",
               "chalet"
             ],
-            "lodging-11",
+            "lodging",
             [
               "car_repair",
               "supermarket",
@@ -6873,48 +6876,48 @@
               "car_rental",
               "bakery"
             ],
-            "commercial-11",
-            "drinking-water-11",
-            "water-11",
-            "bus-11",
-            "bus-11",
-            "park-11",
-            "park-11",
-            "stadium-11",
-            "stadium-11",
-            "embassy-11",
-            "embassy-11",
-            "hospital-11",
-            "hospital-11",
-            "fuel-11",
-            "fuel-11",
-            "airport-11",
-            "airport-11",
-            "ferry-11",
-            "ferry-11",
-            "zoo-11",
-            "zoo-11",
-            "amusement-park-11",
-            "amusement-park-11",
-            "airfield-11",
-            "airfield-11",
-            "building-11",
-            "building-11",
-            "pharmacy-11",
-            "pharmacy-11",
+            "commercial",
+            "drinking-water",
+            "water",
+            "bus",
+            "bus",
+            "park",
+            "park",
+            "stadium",
+            "stadium",
+            "embassy",
+            "embassy",
+            "hospital",
+            "hospital",
+            "fuel",
+            "fuel",
+            "airport",
+            "airport",
+            "ferry",
+            "ferry",
+            "zoo",
+            "zoo",
+            "amusement-park",
+            "amusement-park",
+            "airfield",
+            "airfield",
+            "building",
+            "building",
+            "pharmacy",
+            "pharmacy",
             "townhall-11",
             "townhall-11",
-            "police-11",
-            "police-11",
-            "prison-11",
-            "prison-11",
-            "fire-station-11",
-            "fire-station-11",
-            "post-11",
-            "post-11",
-            "school-11",
-            "school-11",
-            "circle-11"
+            "police",
+            "police",
+            "prison",
+            "prison",
+            "fire-station",
+            "fire-station",
+            "post",
+            "post",
+            "school",
+            "school",
+            "circle"
           ]
         ],
         "icon-size": [
@@ -7790,12 +7793,12 @@
           "Roboto Regular"
         ],
         "text-size": 12,
-        "icon-image": "circle-11",
+        "icon-image": "circle",
         "text-offset": [
           0,
           1.2
         ],
-        "icon-size": 1,
+        "icon-size": 0.7,
         "text-max-width": 8
       },
       "paint": {

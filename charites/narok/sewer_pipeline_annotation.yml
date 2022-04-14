@@ -1,0 +1,31 @@
+id: sewer_pipeline_annotation
+type: symbol
+source: assets
+source-layer: sewer_pipeline
+minzoom: 16
+layout:
+  text-field:
+    - step
+    - - zoom
+    - ''
+    - 16
+    - - concat
+      - - get
+        - pipeline_name
+      - '-'
+      - - get
+        - sewer_zone
+      - '-DN'
+      - - to-string
+        - - get
+          - diameter
+      - ' '
+      - - get
+        - material
+  symbol-placement: line
+  text-font:
+    - Roboto Regular
+  text-size: 12
+paint:
+  text-halo-color: '#ffffff'
+  text-halo-width: 1.5
