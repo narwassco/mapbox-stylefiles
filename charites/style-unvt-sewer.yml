@@ -17,8 +17,7 @@ sources:
     type: vector
   ne:
     attribution: >-
-      ©Natural Earth., <img
-      src='https://unopengis.github.io/watermark/watermark.png'>
+      ©Natural Earth
     maxzoom: 5
     tiles:
       - https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf

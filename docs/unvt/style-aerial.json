@@ -1,0 +1,1848 @@
+{
+  "version": 8,
+  "name": "NARWASSCO Vector Tile",
+  "center": [
+    35.869092060810885,
+    -1.0857266150667897
+  ],
+  "zoom": 13.39788632926911,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "bing": {
+      "type": "raster",
+      "tiles": [
+        "http://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t4.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t5.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t6.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t7.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1"
+      ],
+      "maxzoom": 18,
+      "attribution": "Map tiles by <a target=\"_top\" rel=\"noopener\" href=\"http://bing.com\">Microsoft</a>, under <a target=\"_top\" rel=\"noopener\" href=\"https://www.microsoft.com/en-us/maps/product\">Microsoft Bing Maps Platform APIs Terms Of Use</a>"
+    },
+    "v": {
+      "attribution": "OpenStreetMap contributors, Powered by the United Nations Vector Tile Toolkit ",
+      "maxzoom": 15,
+      "tiles": [
+        "https://narwassco.github.io/naru/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    },
+    "ne": {
+      "attribution": "©Natural Earth",
+      "maxzoom": 5,
+      "tiles": [
+        "https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    },
+    "assets": {
+      "attribution": "©NARWASSCO,Ltd., ©Mapbox",
+      "minzoom": 10,
+      "maxzoom": 16,
+      "tiles": [
+        "https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt"
+      ],
+      "type": "vector"
+    }
+  },
+  "sprite": "https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite",
+  "glyphs": "https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "bingaerial",
+      "type": "raster",
+      "source": "bing",
+      "minzoom": 0,
+      "layout": {
+        "visibility": "visible"
+      }
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "id": "ne-ls-country",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-width": 1
+      },
+      "source": "ne",
+      "source-layer": "country",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "admin_level"
+        ],
+        2,
+        false,
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ]
+      ],
+      "id": "ls-boundary-other",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-dasharray": [
+          4,
+          1,
+          1,
+          1
+        ]
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "disputed"
+        ],
+        "yes",
+        [
+          "match",
+          [
+            "get",
+            "admin_level"
+          ],
+          2,
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          false
+        ],
+        false
+      ],
+      "id": "ls-boundary-international-disputed",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-dasharray": [
+          4,
+          1
+        ],
+        "line-width": 2
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "disputed"
+        ],
+        "yes",
+        false,
+        [
+          "match",
+          [
+            "get",
+            "admin_level"
+          ],
+          2,
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          false
+        ]
+      ],
+      "id": "ls-boundary-international",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-dasharray": [
+          6,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "line-width": 2
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "line"
+    },
+    {
+      "id": "ne-pt-country",
+      "layout": {
+        "text-field": [
+          "get",
+          "name"
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 13
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "ne",
+      "source-layer": "country_annotation",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "ne-pt-place",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "place"
+          ],
+          "airports",
+          "airport",
+          "ports",
+          "ferry",
+          "mountains",
+          "mountain",
+          "city",
+          "city",
+          "circle"
+        ],
+        "icon-size": 1,
+        "text-field": [
+          "get",
+          "name"
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-justify": "auto",
+        "text-radial-offset": 1,
+        "text-size": 10,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
+      },
+      "maxzoom": 6,
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "ne",
+      "source-layer": "place",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-nature",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "natural"
+          ],
+          "tree",
+          "park",
+          "circle"
+        ]
+      },
+      "minzoom": 18,
+      "source": "v",
+      "source-layer": "nature",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-water",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          13,
+          71,
+          161
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "water",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-boundary",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          183,
+          28,
+          28
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-road",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "highway"
+          ],
+          "bus_stop",
+          "bus",
+          "circle"
+        ],
+        "text-anchor": "top",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          17,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-size": 9
+      },
+      "minzoom": 17,
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "v",
+      "source-layer": "road",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-railway",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "railway"
+          ],
+          "station",
+          "rail",
+          "halt",
+          "rail",
+          "tram_stop",
+          "rail",
+          "circle"
+        ],
+        "text-anchor": "top",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          15,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "v",
+      "source-layer": "railway",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-route",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          136,
+          14,
+          79
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "route",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-structure",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "barrier"
+          ],
+          "gate",
+          "prison",
+          "circle"
+        ]
+      },
+      "minzoom": 17,
+      "source": "v",
+      "source-layer": "structure",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-building",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          183,
+          174,
+          174
+        ],
+        "circle-radius": 2
+      },
+      "source": "v",
+      "source-layer": "building",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString"
+        ],
+        true,
+        false
+      ],
+      "id": "ls-road-symbol",
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name}",
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              0,
+              -0.5
+            ]
+          ],
+          16,
+          [
+            "literal",
+            [
+              0,
+              -1
+            ]
+          ],
+          17,
+          [
+            "literal",
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        "text-optional": true,
+        "text-size": 8
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          97,
+          97,
+          97
+        ]
+      },
+      "source": "v",
+      "source-layer": "road",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-place",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "capital"
+          ],
+          "yes",
+          "city",
+          [
+            "match",
+            [
+              "coalesce",
+              [
+                "get",
+                "place"
+              ],
+              [
+                "get",
+                "leasure"
+              ],
+              [
+                "get",
+                "sports"
+              ],
+              [
+                "get",
+                "amenity"
+              ],
+              [
+                "get",
+                "historic"
+              ],
+              [
+                "get",
+                "military"
+              ],
+              [
+                "get",
+                "office"
+              ],
+              [
+                "get",
+                "craft"
+              ],
+              [
+                "get",
+                "tourism"
+              ],
+              [
+                "get",
+                "shop"
+              ]
+            ],
+            [
+              "sports_centre",
+              "tennis"
+            ],
+            "fitness-centre",
+            [
+              "public_building",
+              "townhall"
+            ],
+            "college",
+            [
+              "college",
+              "university"
+            ],
+            "college",
+            [
+              "restaurant",
+              "fast_food",
+              "cafe",
+              "food_court"
+            ],
+            "restaurant",
+            [
+              "biergarten",
+              "nightclub",
+              "pub",
+              "bar"
+            ],
+            "bar",
+            [
+              "community_centre",
+              "government"
+            ],
+            "building",
+            [
+              "library"
+            ],
+            "library",
+            [
+              "arts_centre",
+              "archaeological_site",
+              "ruins",
+              "museum"
+            ],
+            "museum",
+            [
+              "money_transfer",
+              "bureau_de_change",
+              "bank",
+              "atm"
+            ],
+            "bank",
+            [
+              "monument",
+              "memorial",
+              "grave_yard"
+            ],
+            "monument",
+            [
+              "castle",
+              "fort"
+            ],
+            "castle",
+            [
+              "bed_and_breakfast",
+              "hotel",
+              "chalet"
+            ],
+            "lodging",
+            [
+              "car_repair",
+              "supermarket",
+              "kiosk",
+              "department_store",
+              "clothes",
+              "books",
+              "butcher",
+              "beverages",
+              "alcohol",
+              "optician",
+              "stationery",
+              "mobile_phone",
+              "greengrocer",
+              "car",
+              "furniture",
+              "computer",
+              "hairdresser",
+              "travel_agency",
+              "cinema",
+              "theatre",
+              "marketplace",
+              "car_rental",
+              "bakery"
+            ],
+            "commercial",
+            "drinking-water",
+            "water",
+            "bus",
+            "bus",
+            "park",
+            "park",
+            "stadium",
+            "stadium",
+            "embassy",
+            "embassy",
+            "hospital",
+            "hospital",
+            "fuel",
+            "fuel",
+            "airport",
+            "airport",
+            "ferry",
+            "ferry",
+            "zoo",
+            "zoo",
+            "amusement-park",
+            "amusement-park",
+            "airfield",
+            "airfield",
+            "building",
+            "building",
+            "pharmacy",
+            "pharmacy",
+            "townhall-11",
+            "building",
+            "police",
+            "police",
+            "prison",
+            "prison",
+            "fire-station",
+            "fire-station",
+            "post",
+            "post",
+            "school",
+            "school",
+            "circle"
+          ]
+        ],
+        "icon-size": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            1,
+            [
+              "case",
+              [
+                "has",
+                "place"
+              ],
+              0,
+              [
+                "any",
+                [
+                  "has",
+                  "shop"
+                ],
+                [
+                  "has",
+                  "tourism"
+                ],
+                [
+                  "has",
+                  "craft"
+                ],
+                [
+                  "has",
+                  "amenity"
+                ],
+                [
+                  "has",
+                  "sports"
+                ]
+              ],
+              0,
+              1
+            ]
+          ],
+          17,
+          1
+        ],
+        "text-anchor": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            "bottom-left",
+            "center"
+          ],
+          17,
+          "top"
+        ],
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "case",
+            [
+              "has",
+              "place"
+            ],
+            [
+              "get",
+              "name"
+            ],
+            ""
+          ],
+          17,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            [
+              "literal",
+              [
+                0.4,
+                0
+              ]
+            ],
+            [
+              "literal",
+              [
+                0,
+                0
+              ]
+            ]
+          ],
+          17,
+          [
+            "literal",
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "text-size": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            20,
+            [
+              "match",
+              [
+                "get",
+                "place"
+              ],
+              "city",
+              18,
+              "town",
+              16,
+              [
+                "village",
+                "hamlet",
+                "isolated_dwelling",
+                "locality"
+              ],
+              12,
+              10
+            ]
+          ],
+          18,
+          10
+        ]
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "v",
+      "source-layer": "place",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-other",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          49,
+          27,
+          146
+        ]
+      },
+      "source": "v",
+      "source-layer": "other",
+      "type": "circle"
+    },
+    {
+      "id": "village",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "village",
+      "minzoom": 10,
+      "maxzoom": 17,
+      "paint": {
+        "line-width": 1.8,
+        "line-color": "hsl(118, 36%, 44%)",
+        "line-dasharray": [
+          3,
+          1.5
+        ]
+      }
+    },
+    {
+      "id": "dma",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "dma",
+      "minzoom": 13,
+      "maxzoom": 17,
+      "layout": {},
+      "paint": {
+        "line-color": "hsl(33, 100%, 50%)",
+        "line-width": 1.5,
+        "line-dasharray": [
+          1,
+          1
+        ],
+        "line-gap-width": 0.5
+      }
+    },
+    {
+      "id": "parcels",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "parcels",
+      "minzoom": 16,
+      "layout": {},
+      "paint": {
+        "line-width": 1.2,
+        "line-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "wtp",
+      "type": "fill",
+      "source": "assets",
+      "source-layer": "plant",
+      "minzoom": 10,
+      "filter": [
+        "match",
+        [
+          "get",
+          "plant_type"
+        ],
+        [
+          "WTP"
+        ],
+        true,
+        false
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 5%, 83%)",
+        "fill-outline-color": "rgb(0, 0, 0)",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "intake",
+      "type": "fill",
+      "source": "assets",
+      "source-layer": "plant",
+      "minzoom": 10,
+      "filter": [
+        "match",
+        [
+          "get",
+          "plant_type"
+        ],
+        [
+          "INTAKE"
+        ],
+        true,
+        false
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 18%, 85%)",
+        "fill-outline-color": "hsl(0, 8%, 6%)",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "pipeline",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "pipeline",
+      "minzoom": 10,
+      "layout": {},
+      "paint": {
+        "line-color": "hsl(240, 100%, 50%)",
+        "line-width": [
+          "match",
+          [
+            "get",
+            "pipesize"
+          ],
+          [
+            "DN300"
+          ],
+          3,
+          [
+            "DN250"
+          ],
+          2.5,
+          [
+            "DN200"
+          ],
+          2.3,
+          [
+            "DN150"
+          ],
+          2,
+          [
+            "DN110",
+            "DN100"
+          ],
+          1.7,
+          [
+            "DN90"
+          ],
+          1.5,
+          [
+            "DN63",
+            "DN50",
+            "DN75"
+          ],
+          1.3,
+          [
+            "DN13"
+          ],
+          0.8,
+          1
+        ]
+      }
+    },
+    {
+      "id": "tank",
+      "type": "fill",
+      "source": "assets",
+      "source-layer": "tank",
+      "minzoom": 13,
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(75, 99%, 91%)",
+        "fill-outline-color": "hsl(0, 99%, 0%)"
+      }
+    },
+    {
+      "id": "valve",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "valve",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "valve",
+        "icon-size": 0.7,
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          16,
+          [
+            "concat",
+            [
+              "to-string",
+              [
+                "get",
+                "valvetype"
+              ]
+            ],
+            " ",
+            [
+              "get",
+              "pipesize"
+            ]
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "text-offset": [
+          0,
+          1.5
+        ],
+        "text-max-width": 6
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "firehydrant",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "firehydrant",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "firehydrant",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          16,
+          [
+            "to-string",
+            [
+              "get",
+              "size"
+            ]
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "text-offset": [
+          0,
+          -1.2
+        ]
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "washout",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "washout",
+      "minzoom": 15,
+      "layout": {
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          16,
+          [
+            "to-string",
+            [
+              "get",
+              "size"
+            ]
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "text-offset": [
+          0,
+          1
+        ],
+        "icon-image": "washout"
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "flow meter",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "flowmeter",
+      "minzoom": 14,
+      "filter": [
+        "match",
+        [
+          "get",
+          "metertype"
+        ],
+        [
+          "",
+          "Customer Meter"
+        ],
+        false,
+        true
+      ],
+      "layout": {
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          14,
+          [
+            "get",
+            "metertype"
+          ]
+        ],
+        "text-size": 12,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "icon-image": "meter",
+        "text-justify": "left"
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "meter",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "meter",
+      "minzoom": 16,
+      "filter": [
+        "match",
+        [
+          "get",
+          "metertype"
+        ],
+        [
+          "",
+          "Customer Meter"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-size": 12,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "status"
+          ],
+          [
+            "ON"
+          ],
+          "meter_on",
+          [
+            "AVG"
+          ],
+          "meter_avg",
+          [
+            "CO"
+          ],
+          "meter_co",
+          "meter"
+        ],
+        "icon-size": 0.7,
+        "text-justify": "left",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          17,
+          [
+            "concat",
+            [
+              "to-string",
+              [
+                "get",
+                "connno"
+              ]
+            ],
+            [
+              "get",
+              "zonecd"
+            ]
+          ]
+        ]
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "village_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 10,
+      "maxzoom": 17,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "village"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-size": 15,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-max-width": 8,
+        "icon-image": "default-6",
+        "icon-size": 1.1,
+        "icon-text-fit": "both"
+      },
+      "paint": {
+        "text-color": "hsl(131, 64%, 45%)",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "dma-annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 13,
+      "maxzoom": 17,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "dma"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "icon-image": "pe-regional-4",
+        "icon-text-fit": "both",
+        "icon-size": 1.5,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 14
+      },
+      "paint": {
+        "text-color": "hsl(33, 100%, 50%)"
+      }
+    },
+    {
+      "id": "parcels_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "parcels_annotation",
+      "minzoom": 17,
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "parcel_no"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "symbol-avoid-edges": true
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "pipeline_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "pipeline",
+      "minzoom": 16,
+      "layout": {
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          16,
+          [
+            "concat",
+            [
+              "to-string",
+              [
+                "get",
+                "pipesize"
+              ]
+            ],
+            " ",
+            [
+              "get",
+              "material"
+            ]
+          ]
+        ],
+        "symbol-placement": "line",
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "intake_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 10,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "intake"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "text-max-width": 7
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "tank_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 13,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "tank"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 13
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "narwassco-annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 10,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "NARWASSCO"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "icon-image": "circle",
+        "text-offset": [
+          0,
+          1.2
+        ],
+        "icon-size": 0.7,
+        "text-max-width": 8
+      },
+      "paint": {
+        "text-halo-width": 1.5,
+        "text-halo-color": "hsl(0, 0%, 100%)"
+      }
+    },
+    {
+      "id": "wtp_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 10,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "wtp"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "get",
+            "name"
+          ],
+          22,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "text-max-width": 7,
+        "icon-image": "rectangle-yellow-6",
+        "icon-text-fit": "both",
+        "icon-size": 1.2
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-color": "hsl(5, 86%, 49%)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+version: 8
+name: NARWASSCO Vector Tile
+center:
+  - 35.869092060810885
+  - -1.0857266150667897
+zoom: 13.39788632926911
+bearing: 0
+pitch: 0
+sources:
+  bing:
+    type: raster
+    tiles: [
+        "http://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t4.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t5.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t6.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t7.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+    ]
+    maxzoom: 18
+    attribution: 'Map tiles by <a target="_top" rel="noopener" href="http://bing.com">Microsoft</a>, under <a target="_top" rel="noopener" href="https://www.microsoft.com/en-us/maps/product">Microsoft Bing Maps Platform APIs Terms Of Use</a>'
+  v:
+    attribution: >-
+      OpenStreetMap contributors, Powered by the United Nations Vector Tile
+      Toolkit 
+    maxzoom: 15
+    tiles:
+      - https://narwassco.github.io/naru/zxy/{z}/{x}/{y}.pbf
+    type: vector
+  ne:
+    attribution: >-
+      ©Natural Earth
+    maxzoom: 5
+    tiles:
+      - https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf
+    type: vector
+  assets:
+    attribution: ©NARWASSCO,Ltd., ©Mapbox
+    minzoom: 10
+    maxzoom: 16
+    tiles:
+      - https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt
+    type: vector
+sprite: https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite
+glyphs: https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf
+layers:
+  - !!inc/file bing/aerial.yml
+  - !!inc/file ne/ne-ls-country.yml
+  - !!inc/file osm/ls-boundary-other.yml
+  - !!inc/file osm/ls-boundary-international-disputed.yml
+  - !!inc/file osm/ls-boundary-international.yml
+  - !!inc/file ne/ne-pt-country.yml
+  - !!inc/file ne/ne-pt-place.yml
+  - !!inc/file osm/pt-nature.yml
+  - !!inc/file osm/pt-water.yml
+  - !!inc/file osm/pt-boundary.yml
+  - !!inc/file osm/pt-road.yml
+  - !!inc/file osm/pt-railway.yml
+  - !!inc/file osm/pt-route.yml
+  - !!inc/file osm/pt-structure.yml
+  - !!inc/file osm/pt-building.yml
+  - !!inc/file osm/ls-road-symbol.yml
+  - !!inc/file osm/pt-place.yml
+  - !!inc/file osm/pt-other.yml
+  - !!inc/file narok/village.yml
+  - !!inc/file narok/parcels.yml
+  - !!inc/file narok/sewer_wtp.yml
+  - !!inc/file narok/sewer_pipeline.yml
+  - !!inc/file narok/manhole.yml
+  - !!inc/file narok/sewer_connection_commercial.yml
+  - !!inc/file narok/sewer_connection_institution.yml
+  - !!inc/file narok/sewer_connection_public_toilet.yml
+  - !!inc/file narok/sewer_connection.yml
+  - !!inc/file narok/village_annotation.yml
+  - !!inc/file narok/parcels_annotation.yml
+  - !!inc/file narok/sewer_pipeline_annotation.yml
+  - !!inc/file narok/narwassco-annotation.yml

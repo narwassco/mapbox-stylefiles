@@ -12,12 +12,12 @@ layout:
     - - get
       - railway
     - station
-    - rail-11
+    - rail
     - halt
-    - rail-11
+    - rail
     - tram_stop
-    - rail-11
-    - circle-11
+    - rail
+    - circle
   text-anchor: top
   text-field:
     - step

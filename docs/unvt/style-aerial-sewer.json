@@ -1,0 +1,1628 @@
+{
+  "version": 8,
+  "name": "NARWASSCO Vector Tile",
+  "center": [
+    35.869092060810885,
+    -1.0857266150667897
+  ],
+  "zoom": 13.39788632926911,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "bing": {
+      "type": "raster",
+      "tiles": [
+        "http://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t4.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t5.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t6.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1",
+        "http://ecn.t7.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=1"
+      ],
+      "maxzoom": 18,
+      "attribution": "Map tiles by <a target=\"_top\" rel=\"noopener\" href=\"http://bing.com\">Microsoft</a>, under <a target=\"_top\" rel=\"noopener\" href=\"https://www.microsoft.com/en-us/maps/product\">Microsoft Bing Maps Platform APIs Terms Of Use</a>"
+    },
+    "v": {
+      "attribution": "OpenStreetMap contributors, Powered by the United Nations Vector Tile Toolkit ",
+      "maxzoom": 15,
+      "tiles": [
+        "https://narwassco.github.io/naru/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    },
+    "ne": {
+      "attribution": "©Natural Earth",
+      "maxzoom": 5,
+      "tiles": [
+        "https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    },
+    "assets": {
+      "attribution": "©NARWASSCO,Ltd., ©Mapbox",
+      "minzoom": 10,
+      "maxzoom": 16,
+      "tiles": [
+        "https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt"
+      ],
+      "type": "vector"
+    }
+  },
+  "sprite": "https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite",
+  "glyphs": "https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "bingaerial",
+      "type": "raster",
+      "source": "bing",
+      "minzoom": 0,
+      "layout": {
+        "visibility": "visible"
+      }
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "id": "ne-ls-country",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-width": 1
+      },
+      "source": "ne",
+      "source-layer": "country",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "admin_level"
+        ],
+        2,
+        false,
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ]
+      ],
+      "id": "ls-boundary-other",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-dasharray": [
+          4,
+          1,
+          1,
+          1
+        ]
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "disputed"
+        ],
+        "yes",
+        [
+          "match",
+          [
+            "get",
+            "admin_level"
+          ],
+          2,
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          false
+        ],
+        false
+      ],
+      "id": "ls-boundary-international-disputed",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-dasharray": [
+          4,
+          1
+        ],
+        "line-width": 2
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "disputed"
+        ],
+        "yes",
+        false,
+        [
+          "match",
+          [
+            "get",
+            "admin_level"
+          ],
+          2,
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          false
+        ]
+      ],
+      "id": "ls-boundary-international",
+      "paint": {
+        "line-color": [
+          "rgb",
+          92,
+          99,
+          102
+        ],
+        "line-dasharray": [
+          6,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "line-width": 2
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "line"
+    },
+    {
+      "id": "ne-pt-country",
+      "layout": {
+        "text-field": [
+          "get",
+          "name"
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 13
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "ne",
+      "source-layer": "country_annotation",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "ne-pt-place",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "place"
+          ],
+          "airports",
+          "airport",
+          "ports",
+          "ferry",
+          "mountains",
+          "mountain",
+          "city",
+          "city",
+          "circle"
+        ],
+        "icon-size": 1,
+        "text-field": [
+          "get",
+          "name"
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-justify": "auto",
+        "text-radial-offset": 1,
+        "text-size": 10,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
+      },
+      "maxzoom": 6,
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "ne",
+      "source-layer": "place",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-nature",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "natural"
+          ],
+          "tree",
+          "park",
+          "circle"
+        ]
+      },
+      "minzoom": 18,
+      "source": "v",
+      "source-layer": "nature",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-water",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          13,
+          71,
+          161
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "water",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-boundary",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          183,
+          28,
+          28
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "boundary",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-road",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "highway"
+          ],
+          "bus_stop",
+          "bus",
+          "circle"
+        ],
+        "text-anchor": "top",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          17,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-size": 9
+      },
+      "minzoom": 17,
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "v",
+      "source-layer": "road",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-railway",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "railway"
+          ],
+          "station",
+          "rail",
+          "halt",
+          "rail",
+          "tram_stop",
+          "rail",
+          "circle"
+        ],
+        "text-anchor": "top",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          15,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "v",
+      "source-layer": "railway",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-route",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          136,
+          14,
+          79
+        ],
+        "circle-radius": 2.5
+      },
+      "source": "v",
+      "source-layer": "route",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-structure",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "barrier"
+          ],
+          "gate",
+          "prison",
+          "circle"
+        ]
+      },
+      "minzoom": 17,
+      "source": "v",
+      "source-layer": "structure",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-building",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          183,
+          174,
+          174
+        ],
+        "circle-radius": 2
+      },
+      "source": "v",
+      "source-layer": "building",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString"
+        ],
+        true,
+        false
+      ],
+      "id": "ls-road-symbol",
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name}",
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              0,
+              -0.5
+            ]
+          ],
+          16,
+          [
+            "literal",
+            [
+              0,
+              -1
+            ]
+          ],
+          17,
+          [
+            "literal",
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        "text-optional": true,
+        "text-size": 8
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          97,
+          97,
+          97
+        ]
+      },
+      "source": "v",
+      "source-layer": "road",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-place",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "capital"
+          ],
+          "yes",
+          "city",
+          [
+            "match",
+            [
+              "coalesce",
+              [
+                "get",
+                "place"
+              ],
+              [
+                "get",
+                "leasure"
+              ],
+              [
+                "get",
+                "sports"
+              ],
+              [
+                "get",
+                "amenity"
+              ],
+              [
+                "get",
+                "historic"
+              ],
+              [
+                "get",
+                "military"
+              ],
+              [
+                "get",
+                "office"
+              ],
+              [
+                "get",
+                "craft"
+              ],
+              [
+                "get",
+                "tourism"
+              ],
+              [
+                "get",
+                "shop"
+              ]
+            ],
+            [
+              "sports_centre",
+              "tennis"
+            ],
+            "fitness-centre",
+            [
+              "public_building",
+              "townhall"
+            ],
+            "college",
+            [
+              "college",
+              "university"
+            ],
+            "college",
+            [
+              "restaurant",
+              "fast_food",
+              "cafe",
+              "food_court"
+            ],
+            "restaurant",
+            [
+              "biergarten",
+              "nightclub",
+              "pub",
+              "bar"
+            ],
+            "bar",
+            [
+              "community_centre",
+              "government"
+            ],
+            "building",
+            [
+              "library"
+            ],
+            "library",
+            [
+              "arts_centre",
+              "archaeological_site",
+              "ruins",
+              "museum"
+            ],
+            "museum",
+            [
+              "money_transfer",
+              "bureau_de_change",
+              "bank",
+              "atm"
+            ],
+            "bank",
+            [
+              "monument",
+              "memorial",
+              "grave_yard"
+            ],
+            "monument",
+            [
+              "castle",
+              "fort"
+            ],
+            "castle",
+            [
+              "bed_and_breakfast",
+              "hotel",
+              "chalet"
+            ],
+            "lodging",
+            [
+              "car_repair",
+              "supermarket",
+              "kiosk",
+              "department_store",
+              "clothes",
+              "books",
+              "butcher",
+              "beverages",
+              "alcohol",
+              "optician",
+              "stationery",
+              "mobile_phone",
+              "greengrocer",
+              "car",
+              "furniture",
+              "computer",
+              "hairdresser",
+              "travel_agency",
+              "cinema",
+              "theatre",
+              "marketplace",
+              "car_rental",
+              "bakery"
+            ],
+            "commercial",
+            "drinking-water",
+            "water",
+            "bus",
+            "bus",
+            "park",
+            "park",
+            "stadium",
+            "stadium",
+            "embassy",
+            "embassy",
+            "hospital",
+            "hospital",
+            "fuel",
+            "fuel",
+            "airport",
+            "airport",
+            "ferry",
+            "ferry",
+            "zoo",
+            "zoo",
+            "amusement-park",
+            "amusement-park",
+            "airfield",
+            "airfield",
+            "building",
+            "building",
+            "pharmacy",
+            "pharmacy",
+            "townhall-11",
+            "building",
+            "police",
+            "police",
+            "prison",
+            "prison",
+            "fire-station",
+            "fire-station",
+            "post",
+            "post",
+            "school",
+            "school",
+            "circle"
+          ]
+        ],
+        "icon-size": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            1,
+            [
+              "case",
+              [
+                "has",
+                "place"
+              ],
+              0,
+              [
+                "any",
+                [
+                  "has",
+                  "shop"
+                ],
+                [
+                  "has",
+                  "tourism"
+                ],
+                [
+                  "has",
+                  "craft"
+                ],
+                [
+                  "has",
+                  "amenity"
+                ],
+                [
+                  "has",
+                  "sports"
+                ]
+              ],
+              0,
+              1
+            ]
+          ],
+          17,
+          1
+        ],
+        "text-anchor": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            "bottom-left",
+            "center"
+          ],
+          17,
+          "top"
+        ],
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "case",
+            [
+              "has",
+              "place"
+            ],
+            [
+              "get",
+              "name"
+            ],
+            ""
+          ],
+          17,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            [
+              "literal",
+              [
+                0.4,
+                0
+              ]
+            ],
+            [
+              "literal",
+              [
+                0,
+                0
+              ]
+            ]
+          ],
+          17,
+          [
+            "literal",
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "text-size": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "match",
+            [
+              "get",
+              "capital"
+            ],
+            "yes",
+            20,
+            [
+              "match",
+              [
+                "get",
+                "place"
+              ],
+              "city",
+              18,
+              "town",
+              16,
+              [
+                "village",
+                "hamlet",
+                "isolated_dwelling",
+                "locality"
+              ],
+              12,
+              10
+            ]
+          ],
+          18,
+          10
+        ]
+      },
+      "paint": {
+        "text-color": [
+          "rgb",
+          0,
+          0,
+          0
+        ],
+        "text-halo-color": [
+          "rgb",
+          238,
+          238,
+          238
+        ],
+        "text-halo-width": 1
+      },
+      "source": "v",
+      "source-layer": "place",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "id": "pt-other",
+      "paint": {
+        "circle-color": [
+          "rgb",
+          49,
+          27,
+          146
+        ]
+      },
+      "source": "v",
+      "source-layer": "other",
+      "type": "circle"
+    },
+    {
+      "id": "village",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "village",
+      "minzoom": 10,
+      "maxzoom": 17,
+      "paint": {
+        "line-width": 1.8,
+        "line-color": "hsl(118, 36%, 44%)",
+        "line-dasharray": [
+          3,
+          1.5
+        ]
+      }
+    },
+    {
+      "id": "parcels",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "parcels",
+      "minzoom": 16,
+      "layout": {},
+      "paint": {
+        "line-width": 1.2,
+        "line-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "sewer_treatment_plant",
+      "type": "fill",
+      "source": "assets",
+      "source-layer": "sewer_treatment_plant",
+      "minzoom": 10,
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 5%, 83%)",
+        "fill-outline-color": "rgb(0, 0, 0)",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "sewer_pipeline",
+      "type": "line",
+      "source": "assets",
+      "source-layer": "sewer_pipeline",
+      "minzoom": 10,
+      "layout": {},
+      "paint": {
+        "line-color": "rgba(255, 113, 27, 1)",
+        "line-width": [
+          "match",
+          [
+            "get",
+            "type"
+          ],
+          [
+            "Main Trunk Sewer"
+          ],
+          3,
+          [
+            "Sub Trunk Sewer"
+          ],
+          2.5,
+          [
+            "Secondary Trunk Sewer"
+          ],
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "manhole",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "manhole",
+      "minzoom": 14,
+      "layout": {
+        "icon-image": "manhole",
+        "icon-size": 0.8
+      }
+    },
+    {
+      "id": "sewer_commercial",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "sewer_connection",
+      "minzoom": 16,
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        [
+          "Commercial"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "status"
+          ],
+          [
+            "Fully functional"
+          ],
+          "industrial_functional",
+          [
+            "Partially functional"
+          ],
+          "industrial_partially",
+          [
+            "Non functional"
+          ],
+          "industrial_abandoned",
+          "industrial"
+        ],
+        "icon-size": 0.8,
+        "text-size": 12,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-justify": "left",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          17,
+          [
+            "concat",
+            [
+              "to-string",
+              [
+                "get",
+                "water_connection_no"
+              ]
+            ],
+            [
+              "get",
+              "water_zone"
+            ]
+          ]
+        ]
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "sewer_institution",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "sewer_connection",
+      "minzoom": 16,
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        [
+          "Institution"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "status"
+          ],
+          [
+            "Fully functional"
+          ],
+          "institution_functional",
+          [
+            "Partially functional"
+          ],
+          "institution_partially",
+          [
+            "Non functional"
+          ],
+          "institution_abandoned",
+          "institution"
+        ],
+        "icon-size": 0.8,
+        "text-size": 12,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-justify": "left",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          17,
+          [
+            "concat",
+            [
+              "to-string",
+              [
+                "get",
+                "water_connection_no"
+              ]
+            ],
+            [
+              "get",
+              "water_zone"
+            ]
+          ]
+        ]
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "sewer_public_toilet",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "sewer_connection",
+      "minzoom": 16,
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        [
+          "Public Toilet"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "icon-image": "public_toilet"
+      },
+      "paint": {}
+    },
+    {
+      "id": "sewer_connection",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "sewer_connection",
+      "minzoom": 16,
+      "filter": [
+        "match",
+        [
+          "get",
+          "type"
+        ],
+        [
+          "Public Toilet",
+          "Commercial",
+          "Institution"
+        ],
+        false,
+        true
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "status"
+          ],
+          [
+            "Fully functional"
+          ],
+          "household_functional",
+          [
+            "Partially functional"
+          ],
+          "household_partially",
+          [
+            "Non functional"
+          ],
+          "household_abandoned",
+          "household"
+        ],
+        "icon-size": 0.8,
+        "text-size": 12,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-justify": "left",
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          17,
+          [
+            "concat",
+            [
+              "to-string",
+              [
+                "get",
+                "water_connection_no"
+              ]
+            ],
+            [
+              "get",
+              "water_zone"
+            ]
+          ]
+        ]
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-color": "hsl(0, 0%, 0%)"
+      }
+    },
+    {
+      "id": "village_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 10,
+      "maxzoom": 17,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "village"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-size": 15,
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-max-width": 8,
+        "icon-image": "default-6",
+        "icon-size": 1.1,
+        "icon-text-fit": "both"
+      },
+      "paint": {
+        "text-color": "hsl(131, 64%, 45%)",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "parcels_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "parcels_annotation",
+      "minzoom": 17,
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "parcel_no"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "symbol-avoid-edges": true
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "sewer_pipeline_annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "sewer_pipeline",
+      "minzoom": 16,
+      "layout": {
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          16,
+          [
+            "concat",
+            [
+              "get",
+              "pipeline_name"
+            ],
+            "-",
+            [
+              "get",
+              "sewer_zone"
+            ],
+            "-DN",
+            [
+              "to-string",
+              [
+                "get",
+                "diameter"
+              ]
+            ],
+            " ",
+            [
+              "get",
+              "material"
+            ]
+          ]
+        ],
+        "symbol-placement": "line",
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12
+      },
+      "paint": {
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "narwassco-annotation",
+      "type": "symbol",
+      "source": "assets",
+      "source-layer": "point_annotation",
+      "minzoom": 10,
+      "filter": [
+        "match",
+        [
+          "get",
+          "layer"
+        ],
+        [
+          "NARWASSCO"
+        ],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-size": 12,
+        "icon-image": "circle",
+        "text-offset": [
+          0,
+          1.2
+        ],
+        "icon-size": 0.7,
+        "text-max-width": 8
+      },
+      "paint": {
+        "text-halo-width": 1.5,
+        "text-halo-color": "hsl(0, 0%, 100%)"
+      }
+    }
+  ]
+}

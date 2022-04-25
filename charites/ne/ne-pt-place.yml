@@ -12,14 +12,14 @@ layout:
     - - get
       - place
     - airports
-    - airport-11
+    - airport
     - ports
-    - ferry-11
+    - ferry
     - mountains
-    - mountain-11
+    - mountain
     - city
-    - city-11
-    - circle-11
+    - city
+    - circle
   icon-size: 1
   text-field:
     - get
