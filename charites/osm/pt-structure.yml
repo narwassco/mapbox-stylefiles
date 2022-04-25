@@ -12,8 +12,8 @@ layout:
     - - get
       - barrier
     - gate
-    - prison-11
-    - circle-11
+    - prison
+    - circle
 minzoom: 17
 source: v
 source-layer: structure

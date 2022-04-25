@@ -8,7 +8,7 @@
   },
   "scripts": {
     "sprite": "node src/sprite-create.js",
-    "build": "npm run build:unvt && npm run build:building && npm run build:mapbox-street && npm run build:mapbox-satellite && build:unvt-sewer && build:mapbox-satellite-sewer",
+    "build": "npm run build:unvt && npm run build:building && npm run build:bing-aerial && npm run build:unvt-sewer && npm run build:bing-aerial-sewer",
     "build:unvt": "charites build charites/style-unvt.yml docs/unvt/style.json",
     "build:building": "charites build charites/style-buildings.yml docs/unvt/style-buildings.json",
     "build:unvt-terrain": "charites build charites/style-unvt-terrain.yml docs/unvt/terrain-style.json",
@@ -17,7 +17,9 @@
     "build:mapbox-street-terrain": "charites build charites/style-mapbox-street-terrain.yml docs/street/terrain-style.json",
     "build:mapbox-satellite-terrain": "charites build charites/style-mapbox-satellite-terrain.yml docs/satellite/terrain-style.json",
     "build:unvt-sewer": "charites build charites/style-unvt-sewer.yml docs/unvt/style-sewer.json",
-    "build:mapbox-satellite-sewer": "charites build charites/style-mapbox-satellite-sewer.yml docs/satellite/style-sewer.json"
+    "build:mapbox-satellite-sewer": "charites build charites/style-mapbox-satellite-sewer.yml docs/satellite/style-sewer.json",
+    "build:bing-aerial": "charites build charites/style-bing-aerial.yml docs/unvt/style-aerial.json",
+    "build:bing-aerial-sewer": "charites build charites/style-bing-aerial-sewer.yml docs/unvt/style-aerial-sewer.json"
   },
   "repository": {
     "type": "git",

@@ -12,8 +12,8 @@ layout:
     - - get
       - highway
     - bus_stop
-    - bus-11
-    - circle-11
+    - bus
+    - circle
   text-anchor: top
   text-field:
     - step

@@ -18,7 +18,7 @@
       "type": "vector"
     },
     "ne": {
-      "attribution": "©Natural Earth., <img src='https://unopengis.github.io/watermark/watermark.png'>",
+      "attribution": "©Natural Earth",
       "maxzoom": 5,
       "tiles": [
         "https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf"
@@ -6296,14 +6296,14 @@
             "place"
           ],
           "airports",
-          "airport-11",
+          "airport",
           "ports",
-          "ferry-11",
+          "ferry",
           "mountains",
-          "mountain-11",
+          "mountain",
           "city",
-          "city-11",
-          "circle-11"
+          "city",
+          "circle"
         ],
         "icon-size": 1,
         "text-field": [
@@ -6365,8 +6365,8 @@
             "natural"
           ],
           "tree",
-          "park-11",
-          "circle-11"
+          "park",
+          "circle"
         ]
       },
       "minzoom": 18,
@@ -6450,8 +6450,8 @@
             "highway"
           ],
           "bus_stop",
-          "bus-11",
-          "circle-11"
+          "bus",
+          "circle"
         ],
         "text-anchor": "top",
         "text-field": [
@@ -6517,12 +6517,12 @@
             "railway"
           ],
           "station",
-          "rail-11",
+          "rail",
           "halt",
-          "rail-11",
+          "rail",
           "tram_stop",
-          "rail-11",
-          "circle-11"
+          "rail",
+          "circle"
         ],
         "text-anchor": "top",
         "text-field": [
@@ -6614,8 +6614,8 @@
             "barrier"
           ],
           "gate",
-          "prison-11",
-          "circle-11"
+          "prison",
+          "circle"
         ]
       },
       "minzoom": 17,
@@ -6906,7 +6906,7 @@
             "pharmacy",
             "pharmacy",
             "townhall-11",
-            "townhall-11",
+            "building",
             "police",
             "police",
             "prison",
