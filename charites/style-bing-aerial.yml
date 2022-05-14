@@ -37,7 +37,8 @@ sources:
       - https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf
     type: vector
   assets:
-    attribution: ©NARWASSCO,Ltd., ©Mapbox
+    attribution: >-
+      ©<a href='https://narwassco.co.ke'>NARWASSCO,Ltd.</a>
     minzoom: 10
     maxzoom: 16
     tiles:
