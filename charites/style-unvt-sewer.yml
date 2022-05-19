@@ -156,7 +156,7 @@ layers:
   - !!inc/file osm/ls-road-symbol.yml
   - !!inc/file osm/pt-place.yml
   - !!inc/file osm/pt-other.yml
-  - !!inc/file narok/village.yml
+  - !!inc/file narok/sewer_zone.yml
   - !!inc/file narok/parcels.yml
   - !!inc/file narok/sewer_wtp.yml
   - !!inc/file narok/sewer_pipeline.yml
@@ -165,7 +165,7 @@ layers:
   - !!inc/file narok/sewer_connection_institution.yml
   - !!inc/file narok/sewer_connection_public_toilet.yml
   - !!inc/file narok/sewer_connection.yml
-  - !!inc/file narok/village_annotation.yml
+  - !!inc/file narok/sewer_zone_annotation.yml
   - !!inc/file narok/parcels_annotation.yml
   - !!inc/file narok/sewer_pipeline_annotation.yml
   - !!inc/file narok/narwassco-annotation.yml
