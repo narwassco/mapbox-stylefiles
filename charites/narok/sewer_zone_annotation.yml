@@ -1,0 +1,29 @@
+id: sewer_zone_annotation
+type: symbol
+source: assets
+source-layer: point_annotation
+minzoom: 10
+maxzoom: 17
+filter:
+  - match
+  - - get
+    - layer
+  - - sewer_zone
+  - true
+  - false
+layout:
+  text-field:
+    - to-string
+    - - get
+      - name
+  text-size: 15
+  text-font:
+    - Roboto Regular
+  text-max-width: 8
+  icon-image: default-6
+  icon-size: 1.1
+  icon-text-fit: both
+paint:
+  text-color: hsl(131, 64%, 45%)
+  text-halo-color: '#ffffff'
+  text-halo-width: 1.5

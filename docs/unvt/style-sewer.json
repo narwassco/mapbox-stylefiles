@@ -7314,10 +7314,10 @@
       "type": "circle"
     },
     {
-      "id": "village",
+      "id": "sewer_zone",
       "type": "line",
       "source": "assets",
-      "source-layer": "village",
+      "source-layer": "sewer_zone",
       "minzoom": 10,
       "maxzoom": 17,
       "paint": {
@@ -7656,7 +7656,7 @@
       }
     },
     {
-      "id": "village_annotation",
+      "id": "sewer_zone_annotation",
       "type": "symbol",
       "source": "assets",
       "source-layer": "point_annotation",
@@ -7669,7 +7669,7 @@
           "layer"
         ],
         [
-          "village"
+          "sewer_zone"
         ],
         true,
         false
