@@ -6,7 +6,7 @@ minzoom: 10
 maxzoom: 17
 paint:
   line-width: 1.8
-  line-color: hsl(118, 36%, 44%)
+  line-color: rgb(105,209,255)
   line-dasharray:
     - 3
     - 1.5

@@ -7322,7 +7322,7 @@
       "maxzoom": 17,
       "paint": {
         "line-width": 1.8,
-        "line-color": "hsl(118, 36%, 44%)",
+        "line-color": "rgb(105,209,255)",
         "line-dasharray": [
           3,
           1.5
@@ -7682,17 +7682,23 @@
             "name"
           ]
         ],
-        "text-size": 15,
+        "text-size": 18,
         "text-font": [
           "Roboto Regular"
         ],
         "text-max-width": 8,
         "icon-image": "default-6",
-        "icon-size": 1.1,
-        "icon-text-fit": "both"
+        "icon-size": 1.5,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": [
+          3,
+          5,
+          3,
+          5
+        ]
       },
       "paint": {
-        "text-color": "hsl(131, 64%, 45%)",
+        "text-color": "rgb(0,0,255)",
         "text-halo-color": "#ffffff",
         "text-halo-width": 1.5
       }
