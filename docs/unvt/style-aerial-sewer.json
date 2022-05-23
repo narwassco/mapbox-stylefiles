@@ -48,6 +48,15 @@
         "https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt"
       ],
       "type": "vector"
+    },
+    "narok-dem": {
+      "type": "raster-dem",
+      "tiles": [
+        "https://narwassco.github.io/narok-terrain/tiles/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 512,
+      "minzoom": 5,
+      "maxzoom": 15
     }
   },
   "sprite": "https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite",
