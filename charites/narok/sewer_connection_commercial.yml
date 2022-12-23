@@ -26,10 +26,13 @@ layout:
   text-size: 12
   text-font:
     - Roboto Regular
-  text-offset:
-    - 0
-    - 1
-  text-justify: left
+  text-justify: auto
+  text-radial-offset: 0.5
+  text-variable-anchor:
+    - top
+    - bottom
+    - left
+    - right
   text-field:
     - step
     - - zoom

@@ -22,11 +22,14 @@ layout:
   text-size: 12
   text-font:
     - Roboto Regular
-  text-offset:
-    - 0
-    - 1
   icon-image: meter
-  text-justify: left
+  text-justify: auto
+  text-radial-offset: 0.5
+  text-variable-anchor:
+    - top
+    - bottom
+    - left
+    - right
 paint:
   text-halo-color: '#ffffff'
   text-halo-width: 1

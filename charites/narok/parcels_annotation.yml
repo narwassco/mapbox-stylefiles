@@ -12,6 +12,13 @@ layout:
     - Roboto Regular
   text-size: 12
   symbol-avoid-edges: true
+  text-justify: auto
+  text-radial-offset: 0.5
+  text-variable-anchor:
+    - top
+    - bottom
+    - left
+    - right
 paint:
   text-halo-color: '#ffffff'
   text-halo-width: 1

@@ -7440,11 +7440,14 @@
         "text-font": [
           "Roboto Regular"
         ],
-        "text-offset": [
-          0,
-          1
+        "text-justify": "auto",
+        "text-radial-offset": 0.5,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
         ],
-        "text-justify": "left",
         "text-field": [
           "step",
           [
@@ -7518,11 +7521,14 @@
         "text-font": [
           "Roboto Regular"
         ],
-        "text-offset": [
-          0,
-          1
+        "text-justify": "auto",
+        "text-radial-offset": 0.5,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
         ],
-        "text-justify": "left",
         "text-field": [
           "step",
           [
@@ -7621,11 +7627,14 @@
         "text-font": [
           "Roboto Regular"
         ],
-        "text-offset": [
-          0,
-          1
+        "text-justify": "auto",
+        "text-radial-offset": 0.5,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
         ],
-        "text-justify": "left",
         "text-field": [
           "step",
           [
@@ -7721,7 +7730,15 @@
           "Roboto Regular"
         ],
         "text-size": 12,
-        "symbol-avoid-edges": true
+        "symbol-avoid-edges": true,
+        "text-justify": "auto",
+        "text-radial-offset": 0.5,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
       },
       "paint": {
         "text-halo-color": "#ffffff",
@@ -7810,9 +7827,13 @@
         ],
         "text-size": 12,
         "icon-image": "circle",
-        "text-offset": [
-          0,
-          1.2
+        "text-justify": "auto",
+        "text-radial-offset": 0.5,
+        "text-variable-anchor": [
+          "top",
+          "bottom",
+          "left",
+          "right"
         ],
         "icon-size": 0.7,
         "text-max-width": 8
