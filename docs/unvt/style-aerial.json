@@ -1500,11 +1500,11 @@
           ],
           "meter_on",
           [
-            "AVG"
+            "DORMANT"
           ],
           "meter_avg",
           [
-            "CO"
+            "C/O"
           ],
           "meter_co",
           "meter"
