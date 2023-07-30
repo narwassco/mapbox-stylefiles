@@ -21,21 +21,10 @@ sources:
     ]
     maxzoom: 18
     attribution: 'Map tiles by <a target="_top" rel="noopener" href="http://bing.com">Microsoft</a>, under <a target="_top" rel="noopener" href="https://www.microsoft.com/en-us/maps/product">Microsoft Bing Maps Platform APIs Terms Of Use</a>'
-  v:
-    attribution: >-
-      OpenStreetMap contributors, Powered by the United Nations Vector Tile
-      Toolkit 
-    maxzoom: 15
-    tiles:
-      - https://narwassco.github.io/naru/zxy/{z}/{x}/{y}.pbf
+  openmaptiles:
     type: vector
-  ne:
-    attribution: >-
-      ©Natural Earth
-    maxzoom: 5
-    tiles:
-      - https://watergis.github.io/ne2geojson/zxy/{z}/{x}/{y}.pbf
-    type: vector
+    url: pmtiles://https://watergis.github.io/osm-ke-narok/kenya-narok.pmtiles
+    attribution: ©OpenStreetMap contributors
   assets:
     attribution: >-
       ©<a href='https://narwassco.co.ke'>NARWASSCO,Ltd.</a>
@@ -51,29 +40,14 @@ sources:
     tileSize: 512
     minzoom: 5
     maxzoom: 15
-sprite: https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite
+# sprite: https://narwassco.github.io/mapbox-stylefiles/unvt/sprite/sprite
+sprite: "https://openmaptiles.github.io/osm-bright-gl-style/sprite"
 glyphs: https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf
 layers:
   - !!inc/file bing/aerial.yml
-  - !!inc/file ne/ne-ls-country.yml
-  - !!inc/file osm/ls-boundary-other.yml
-  - !!inc/file osm/ls-boundary-international-disputed.yml
-  - !!inc/file osm/ls-boundary-international.yml
-  - !!inc/file ne/ne-pt-country.yml
-  - !!inc/file ne/ne-pt-place.yml
-  - !!inc/file osm/pt-nature.yml
-  - !!inc/file osm/pt-water.yml
-  - !!inc/file osm/pt-boundary.yml
-  - !!inc/file osm/pt-road.yml
-  - !!inc/file osm/pt-railway.yml
-  - !!inc/file osm/pt-route.yml
-  - !!inc/file osm/pt-structure.yml
-  - !!inc/file osm/pt-building.yml
-  - !!inc/file osm/ls-road-symbol.yml
-  - !!inc/file osm/pt-place.yml
-  - !!inc/file osm/pt-other.yml
   - !!inc/file narok/sewer_zone.yml
   - !!inc/file narok/parcels.yml
+  - !!inc/file narok/parcels-outline.yml
   - !!inc/file narok/sewer_wtp.yml
   - !!inc/file narok/sewer_pipeline.yml
   - !!inc/file narok/manhole.yml
@@ -81,6 +55,28 @@ layers:
   - !!inc/file narok/sewer_connection_institution.yml
   - !!inc/file narok/sewer_connection_public_toilet.yml
   - !!inc/file narok/sewer_connection.yml
+  - !!inc/file osm-bright/poi-level-3.yml
+  - !!inc/file osm-bright/poi-level-2.yml
+  - !!inc/file osm-bright/poi-level-1.yml
+  - !!inc/file osm-bright/poi-railway.yml
+  - !!inc/file osm-bright/highway-name-path.yml
+  - !!inc/file osm-bright/highway-name-minor.yml
+  - !!inc/file osm-bright/highway-name-major.yml
+  - !!inc/file osm-bright/highway-shield.yml
+  - !!inc/file osm-bright/highway-shield-us-interstate.yml
+  - !!inc/file osm-bright/highway-shield-us-other.yml
+  - !!inc/file osm-bright/airport-label-major.yml
+  - !!inc/file osm-bright/place-other.yml
+  - !!inc/file osm-bright/place-village.yml
+  - !!inc/file osm-bright/place-town.yml
+  - !!inc/file osm-bright/place-city.yml
+  - !!inc/file osm-bright/place-city-capital.yml
+  - !!inc/file osm-bright/place-state.yml
+  - !!inc/file osm-bright/place-country-other.yml
+  - !!inc/file osm-bright/place-country-3.yml
+  - !!inc/file osm-bright/place-country-2.yml
+  - !!inc/file osm-bright/place-country-1.yml
+  - !!inc/file osm-bright/place-continent.yml
   - !!inc/file narok/sewer_zone_annotation.yml
   - !!inc/file narok/parcels_annotation.yml
   - !!inc/file narok/sewer_pipeline_annotation.yml
