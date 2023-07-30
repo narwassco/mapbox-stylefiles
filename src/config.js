@@ -6,7 +6,7 @@ module.exports = {
       {
         output_dir: path.resolve(export_dir,'../docs/unvt/sprite'),
         icons: [
-          path.resolve(export_dir,'../icons/maki/icons'),
+          path.resolve(export_dir,'../icons/osm-bright-gl-style/icons'),
           path.resolve(export_dir,'../icons/water-icons/icons'),
         ],
       },

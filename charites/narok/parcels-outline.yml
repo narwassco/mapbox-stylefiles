@@ -1,0 +1,10 @@
+id: parcels-outline
+type: line
+source: assets
+source-layer: parcels
+minzoom: 16
+layout: {}
+paint:
+  line-width: 0.8
+  line-color: rgb(255,255,255)
+  line-offset: 1.2
