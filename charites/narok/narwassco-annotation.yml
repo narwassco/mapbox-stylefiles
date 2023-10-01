@@ -18,7 +18,7 @@ layout:
   text-font:
     - Roboto Regular
   text-size: 12
-  icon-image: circle
+  icon-image: circle_11
   text-justify: auto
   text-radial-offset: 0.5
   text-variable-anchor:

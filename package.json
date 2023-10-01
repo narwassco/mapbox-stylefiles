@@ -8,9 +8,9 @@
   },
   "scripts": {
     "sprite": "node src/sprite-create.js",
-    "build": "npm run build:unvt && npm run build:building && npm run build:bing-aerial && npm run build:unvt-sewer && npm run build:bing-aerial-sewer",
-    "build:unvt": "charites build charites/style-unvt.yml docs/unvt/style.json",
-    "build:building": "charites build charites/style-buildings.yml docs/unvt/style-buildings.json",
+    "build": "mkdir -p sprite && npm run build:unvt && npm run build:building && npm run build:bing-aerial && npm run build:unvt-sewer && npm run build:bing-aerial-sewer",
+    "build:unvt": "charites build charites/style-unvt.yml docs/unvt/style.json -i icons/osm-bright-gl-style/icons -o ./sprite",
+    "build:building": "charites build charites/style-buildings.yml docs/unvt/style-buildings.json -i icons/osm-bright-gl-style/icons -o ./sprite",
     "build:unvt-terrain": "charites build charites/style-unvt-terrain.yml docs/unvt/terrain-style.json",
     "build:mapbox-street": "charites build charites/style-mapbox-street.yml docs/street/style.json",
     "build:mapbox-satellite": "charites build charites/style-mapbox-satellite.yml docs/satellite/style.json",
@@ -18,8 +18,8 @@
     "build:mapbox-satellite-terrain": "charites build charites/style-mapbox-satellite-terrain.yml docs/satellite/terrain-style.json",
     "build:unvt-sewer": "charites build charites/style-unvt-sewer.yml docs/unvt/style-sewer.json",
     "build:mapbox-satellite-sewer": "charites build charites/style-mapbox-satellite-sewer.yml docs/satellite/style-sewer.json",
-    "build:bing-aerial": "charites build charites/style-bing-aerial.yml docs/unvt/style-aerial.json",
-    "build:bing-aerial-sewer": "charites build charites/style-bing-aerial-sewer.yml docs/unvt/style-aerial-sewer.json"
+    "build:bing-aerial": "charites build charites/style-bing-aerial.yml docs/unvt/style-aerial.json -i icons/osm-bright-gl-style/icons -o ./sprite",
+    "build:bing-aerial-sewer": "charites build charites/style-bing-aerial-sewer.yml docs/unvt/style-aerial-sewer.json -i icons/osm-bright-gl-style/icons -o ./sprite"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/narwassco/mapbox-stylefiles#readme",
   "dependencies": {
-    "@unvt/charites": "^0.1.4",
+    "@unvt/charites": "^0.5.2",
     "@watergis/sprite-creator": "^0.1.0"
   }
 }
