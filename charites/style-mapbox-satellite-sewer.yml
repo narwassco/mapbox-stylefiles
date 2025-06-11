@@ -245,8 +245,8 @@ sources:
     minzoom: 10
     maxzoom: 16
     tiles:
-      - https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt
-      # - http://127.0.0.1:5500/public/tiles/{z}/{x}/{y}.mvt
+      - https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.pbf
+      # - http://127.0.0.1:5500/public/tiles/{z}/{x}/{y}.pbf
     type: vector
 sprite: https://narwassco.github.io/mapbox-stylefiles/satellite/sprite/sprite
 glyphs: mapbox://fonts/narwassco/{fontstack}/{range}.pbf
