@@ -19,7 +19,7 @@
       "minzoom": 10,
       "maxzoom": 16,
       "tiles": [
-        "https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.mvt"
+        "https://narwassco.github.io/vt/tiles/{z}/{x}/{y}.pbf"
       ],
       "type": "vector"
     },
@@ -6298,7 +6298,7 @@
           "Roboto Regular"
         ],
         "text-size": 12,
-        "icon-image": "circle",
+        "icon-image": "circle_11",
         "text-justify": "auto",
         "text-radial-offset": 0.5,
         "text-variable-anchor": [

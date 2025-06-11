@@ -16,7 +16,7 @@
     "build:mapbox-satellite": "charites build charites/style-mapbox-satellite.yml docs/satellite/style.json",
     "build:mapbox-street-terrain": "charites build charites/style-mapbox-street-terrain.yml docs/street/terrain-style.json",
     "build:mapbox-satellite-terrain": "charites build charites/style-mapbox-satellite-terrain.yml docs/satellite/terrain-style.json",
-    "build:unvt-sewer": "charites build charites/style-unvt-sewer.yml docs/unvt/style-sewer.json",
+    "build:unvt-sewer": "charites build charites/style-unvt-sewer.yml docs/unvt/style-sewer.json -i icons/osm-bright-gl-style/icons -o ./sprite",
     "build:mapbox-satellite-sewer": "charites build charites/style-mapbox-satellite-sewer.yml docs/satellite/style-sewer.json",
     "build:bing-aerial": "charites build charites/style-bing-aerial.yml docs/unvt/style-aerial.json -i icons/osm-bright-gl-style/icons -o ./sprite",
     "build:bing-aerial-sewer": "charites build charites/style-bing-aerial-sewer.yml docs/unvt/style-aerial-sewer.json -i icons/osm-bright-gl-style/icons -o ./sprite"
